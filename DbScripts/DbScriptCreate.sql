@@ -35,22 +35,6 @@ CREATE TABLE IF NOT EXISTS McMart.Users
     PRIMARY KEY (UserID)
 );
 
--- DELETE EXISTING USER TABLE IN DB
-DROP TABLE IF EXISTS McMart.Users;
-
--- CREATE TABLE IF DOSENT EXIST
-CREATE TABLE IF NOT EXISTS McMart.Users
-(
-
-    UserID   INT          NOT NULL AUTO_INCREMENT,
-    Name     VARCHAR(255) NOT NULL,
-    UserName VARCHAR(255) NOT NULL,
-    Email    VARCHAR(255) NOT NULL,
-    Password VARCHAR(255) NOT NULL,
-    Role     VARCHAR(15)  NOT NULL,
-    PRIMARY KEY (UserID)
-);
-
 DROP TABLE IF EXISTS McMart.Products;
 
 CREATE TABLE IF NOT EXISTS McMart.Products
@@ -63,6 +47,7 @@ CREATE TABLE IF NOT EXISTS McMart.Products
     Status      VARCHAR(255) NOT NULL ,
     PictureURI  VARCHAR(255) NOT NULL ,
     StockAmount VARCHAR(255) NOT NULL ,
+    ProductDesc VARCHAR(255) NOT NULL ,
     PRIMARY KEY (ProductId)
 
 
@@ -82,6 +67,7 @@ CREATE TABLE IF NOT EXISTS McMart.Requests
   RequestType   VARCHAR(255) NOT NULL ,
   RequestQuantity INT        NOT NULL ,
   ItemURI       VARCHAR(255) NOT NULL ,
+  RequestDesc   VARCHAR(255) NOT NULL ,
   PaymentType   VARCHAR(255) NOT NULL ,
   PRIMARY KEY (RequestID)
 
