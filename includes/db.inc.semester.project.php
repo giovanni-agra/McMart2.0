@@ -1,17 +1,24 @@
 <?php
 
-DEFINE('DB_USER', ''); // or whatever userid you created
-DEFINE('DB_PASSWORD', 'P@'); // or whatever password you created
+DEFINE('DB_USER', 'root'); // or whatever userid you created
+DEFINE('DB_PASSWORD', 'wordpass123'); // or whatever password you created
 DEFINE('DB_HOST', 'localhost');
-DEFINE('DB_NAME', '');
+DEFINE('DB_NAME', 'McMart');
 
 try {
     // Make the connection:
     $conn = new mysqli(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME);
     // Set the encoding...optional but recommended
     mysqli_set_charset($conn, 'utf8');
+    if (mysqli_connect_errno())
+    {
+        echo "Failed To Connect".mysqli_connect_error();
+        exit();
 
-//    echo "project/includes/db.inc.final.project is connected";
+    }else{
+        echo "connected";
+
+    }
 }
 catch (Exception $e) {
     //print "An exception occurred. Message: " . $e->getMessage();
