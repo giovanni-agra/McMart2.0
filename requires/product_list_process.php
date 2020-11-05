@@ -18,7 +18,7 @@
             $this->conn =$conn;
         }
         public function query1(){
-            require('includes/db.inc.semester.project.php');
+            require('includes/db.inc.php');
             $sql1 = "SELECT * FROM Products";
             $all_result = $GLOBALS['conn']->query($sql1);
             if ($all_result->num_rows > 0) {
@@ -59,7 +59,7 @@
         //single search not yet finish
 
         public function query2(){
-            require('includes/db.inc.semester.project.php');
+            require('includes/db.inc.php');
             if(isset($_POST["search"])) {
                 $Name = $_POST["Name"];
                 $sql2 = "SELECT * FROM Product WHERE 'Name' = '$Name' LIMIT 1";

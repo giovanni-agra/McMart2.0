@@ -34,6 +34,29 @@
                 
             </header>
             <h1 class="text-center">McMart2.0</h1>
+            <?php
+            // first thing is to start session
+            session_start();
+            // now to check if variable is true
+
+            if($_SESSION['Role'] == 'Student')
+            {
+               echo "Hello Student";
+            }elseif ($_SESSION['Role'] =='Worker' )
+            {
+                echo "Hello Worker";
+            }elseif ($_SESSION['Role'] == 'Admin'){
+                echo "Welcome Admin";
+            }else{
+                header('location:login.php');
+            }
+            print_r($_SESSION);
+            ?>
+
+            <h1>Welcome You are Logged In....!!!!!</h1>
+            <a href="logout.php">Logout</a>
+
+
 
 
     </body>

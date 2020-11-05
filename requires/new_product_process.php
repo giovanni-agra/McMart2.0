@@ -62,7 +62,7 @@
     if(empty($errors)) {
 
         try {
-            require('includes/db.inc.semester.project.php');
+            require('includes/db.inc.php');
             $query = "INSERT INTO McMart.Products (ProductId, DateAdded, SKU, Name, Price, Status, PictureURI, StockAmount, ProductDesc)      ";
             $query .= "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $q = mysqli_stmt_init($conn);
