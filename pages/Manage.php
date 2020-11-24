@@ -46,6 +46,9 @@
         $("#load_Cart").click(function () {
             $("#onload").load("Orders.php ");
         });
+        $("#load_ItemsCRUD").click(function () {
+            $("#onload").load("ItemsCRUD.php ");
+        });
         $("#load_BooksCRUD").click(function () {
             $("#onload").load("BooksCrud.php ");
         });
@@ -62,16 +65,16 @@
 <div class="main">
     <nav class="navbar navbar-expand-md navbar-light bg-light">
 
-<!--        <div class="dropdown">-->
-<!--            <button class="dropbtn"><i class='fas fa-bars'></i></button>-->
-<!--            <div class="dropdown-content">-->
-<!--                <a href="#">Link 1</a>-->
-<!--                <a href="#">Link 2</a>-->
-<!--                <a href="#">Link 3</a>-->
-<!--                <a href="#">Link 4</a>-->
-<!--                <a href="#">Link 5</a>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="dropdown">
+            <button class="dropbtn btn-primary"><i class='fas fa-bars'></i></button>
+            <div class="dropdown-content">
+                <a href="../ItemsCrud/ItemsCrud.php" target="_blank">Manage Items</a>
+                <a href="../crud/index.php" target="_blank">Manage Books</a>
+            </div>
+        </div>
+        <div class="">
+            <h1>Hello Power User!</h1>
+        </div>
 
         <div class="navbar-nav ml-auto">
             <a href="../logout.php" class="nav-item nav-link" onclick=""><i class='fas fa-door-closed'></i></a>
@@ -97,7 +100,7 @@
                             <button type="button" class="btn" onclick="" id="load_Cart">In-Cart</button>
                         </li>
                         <li class="list-group-item">
-                            <button type="button" class="btn" onclick="" id="load_BooksCRUD">Worker's Option</button>
+                            <button type="button" class="btn" onclick="" id="load_Option">Worker's Option</button>
                         </li>
                     </ul>
 

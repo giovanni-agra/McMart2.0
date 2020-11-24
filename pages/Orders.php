@@ -41,8 +41,8 @@
 <body>
 <div id="ItemOrder">
     <div>
-        <div class="OptionHeader">
-            <div class="col-md-12">
+        <div class="">
+            <div class="col-md-12 OptionHeader">
                 <nav class="navbar navbar-expand-md navbar-light ">
                     <h2>Order List</h2>
 
@@ -67,59 +67,100 @@
                             </div>
                         </form>
                     </div>
+                </nav>
             </div>
+
+
+        </div>
+        <div class="d-flex table-data">
+            <table class="table table-striped table-dark" style="text-align: center; ">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Picture</th>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Options</th>
+                </tr>
+                <tr style="height: 60px;">
+                    <td>
+                        <button><img
+                                    src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
+                                    alt="" style="width:50px;height:50px;"></button>
+                    </td>
+                    <td>Pen</td>
+                    <td>Quantum pen 0.5</td>
+                    <td>60 baht</td>
+                    <td>InStock</td>
+                    <td><i type="button" class='btn fas fa-trash-alt' style='font-size:24px;color:red'></i></td>
+                </tr>
+                <tr style="height: 60px; ">
+                    <td>
+                        <button><img
+                                    src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
+                                    alt="" style="width:50px;height:50px;"></button>
+                    </td>
+                    <td>Pen</td>
+                    <td>Quantum pen 0.5</td>
+                    <td>60 baht</td>
+                    <td>InStock</td>
+                    <td><i type="button" class='btn fas fa-trash-alt' style='font-size:24px;color:red'></i></td>
+                </tr>
+                <tr style="height: 60px; text-align:center">
+                    <td>
+                        <button><img
+                                    src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
+                                    alt="" style="width:50px;height:50px;"/></button>
+                    </td>
+                    <td>Pen</td>
+                    <td>Quantum pen 0.5</td>
+                    <td>60 baht</td>
+                    <td>InStock</td>
+                    <td><i type="button" class='btn fas fa-trash-alt' style='font-size:24px;color:red'></i></td>
+                </tr>
+                <tr style="height: 60px; text-align:center">
+                    <td>
+                        <button><img
+                                    src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
+                                    alt="" style="width:50px;height:50px;"/></button>
+                    </td>
+                    <td>Pen</td>
+                    <td>Quantum pen 0.5</td>
+                    <td>60 baht</td>
+                    <td>InStock</td>
+                    <td><i type="button" class='btn fas fa-trash-alt' style='font-size:24px;color:red'></i></td>
+                </tr>
+                <tr style="height: 60px; text-align:center">
+                    <td>
+                        <button><img
+                                    src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
+                                    alt="" style="width:50px;height:50px;"/></button>
+                    </td>
+                    <td>Pen</td>
+                    <td>Quantum pen 0.5</td>
+                    <td>60 baht</td>
+                    <td>InStock</td>
+                    <td><i type="button" class='btn fas fa-trash-alt' style='font-size:24px;color:red'></i></td>
+                </tr>
+                </thead>
+
+            </table>
+
+        </div>
+        <div class="">
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Order Checkout</a>
+                <form class="form-inline">
+                    <!--            <input class="form-control mr-sm-2" type="submit"  aria-label="submit">-->
+                    <span class="btn btn-light">Total: XXXXX Baht</span>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="">Confirm Order</button>
+                </form>
             </nav>
+
         </div>
     </div>
-    <div class="d-flex table-data">
-        <table class="table table-striped table-dark" style="text-align: center; ">
-            <thead class="thead-dark">
-            <tr>
-                <th>Picture</th>
-                <th>Item Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Status</th>
-            </tr>
-            <tr style="height: 60px;">
-                <td>
-                    <button class="popup" onclick="showDetail()"><img
-                            src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
-                            alt="" style="width:50px;height:50px;"></button>
-                </td>
-                <td>Pen</td>
-                <td>Quantum pen 0.5</td>
-                <td>60 baht</td>
-                <td>InStock</td>
-            </tr>
-            <tr style="height: 60px; ">
-                <td>
-                    <button><img
-                            src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
-                            alt="" style="width:50px;height:50px;"></button>
-                </td>
-                <td>Pen</td>
-                <td>Quantum pen 0.5</td>
-                <td>60 baht</td>
-                <td>InStock</td>
-            </tr>
-            <tr style="height: 60px; text-align:center">
-                <td>
-                    <button><img
-                            src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
-                            alt="" style="width:50px;height:50px;"/></button>
-                </td>
-                <td>Pen</td>
-                <td>Quantum pen 0.5</td>
-                <td>60 baht</td>
-                <td>InStock</td>
-            </tr>
-            </thead>
-            <tbody >
 
-            </tbody>
-        </table>
-    </div>
 
 </div>
 
