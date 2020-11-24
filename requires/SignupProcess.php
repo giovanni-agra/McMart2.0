@@ -51,7 +51,7 @@ if (empty($errors)) { // everthign is oke
         mysqli_stmt_execute($q);
 
         if (mysqli_stmt_affected_rows($q) == 1) {
-            header("LOCATION: includes/thankyou-page.php"); // to be made
+            header("LOCATION: login.php"); // to be made
             exit();
         } else {
             $errorstring = "<p class ='text-center col-sm-8 mx-auto' style='color:#ff0000'>";
