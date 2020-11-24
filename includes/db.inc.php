@@ -1,9 +1,9 @@
 <?php
 
 DEFINE('DB_USER', 'root'); // or whatever userid you created
-DEFINE('DB_PASSWORD', 'wordpass123'); // or whatever password you created
+DEFINE('DB_PASSWORD', ''); // or whatever password you created
 DEFINE('DB_HOST', '127.0.0.1');
-DEFINE('DB_NAME', 'McMart');
+DEFINE('DB_NAME', 'mcmart');
 
 try {
     // Make the connection:
