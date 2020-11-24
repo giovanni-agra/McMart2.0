@@ -1,3 +1,4 @@
+
 <?php
 require('includes/db.inc.php');
     if ($_POST) {
@@ -52,13 +53,45 @@ require('includes/db.inc.php');
 
 ?>
 
-<form method="POST">
-    Username:<br>
-    <input type="text" name="username"><br>
-    Password:<br>
-    <input type="password" name="password"><br>
-    <input type="submit">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login MCMart2.0</title>
+    <link rel="stylesheet" href="login_style.css"/>
+</head>
+<body>
 
-</form>
-<h2> No Account?</h2>
-<a href="signup.php">Signup</a>
+<!-- The Modal -->
+<div id="id01" class="modal">
+    <span onclick="documen.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <!-- Modal Content-->
+    <form class="modal-content animate" method="POST">
+        <div class="imgcontainer">
+            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="EnterPassword" name="psw" required>
+
+            <button type="submit">Login</button>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="sign-up"><a
+                        href="signup.php">New User?</a></button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>
