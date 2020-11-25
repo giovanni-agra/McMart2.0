@@ -11,6 +11,10 @@
 table .btnedit {
     color: lightsalmon;
     cursor: pointer;
+
+}
+.table-data{
+    over-flow: break-word;
 }
 
 .success {
@@ -22,3 +26,10 @@ table .btnedit {
     background-color: tomato;
     padding: 1em;
 }
+td {
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+

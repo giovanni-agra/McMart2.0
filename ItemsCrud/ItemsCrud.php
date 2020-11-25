@@ -1,7 +1,7 @@
 <?php
 
-require_once("../ItemsCrud/php/component.php");
-require_once("../ItemsCrud/php/operation.php");
+require("../ItemsCrud/php/component.php");
+require("../ItemsCrud/php/operation.php");
 
 ?>
 
@@ -20,7 +20,7 @@ require_once("../ItemsCrud/php/operation.php");
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../itemsCrud/style.css">
 
 </head>
 <body>
@@ -31,15 +31,24 @@ require_once("../ItemsCrud/php/operation.php");
 
         <div class="d-flex justify-content-center">
             <form action="" method="post" class="w-50">
-                <div class="pt-2">
-                    <?php inputElement("<i class='fas fa-id-badge'></i>", "ID", "item_id", " "); ?>
+                <div class="pt-2" hidden>
+                    <?php inputElement("<i class='fas fa-id-badge ''></i>", "Item id", "item_id", ""); ?>
                 </div>
                 <div class="pt-2">
                     <?php inputElement("<i class='fas fa-box-open''></i>", "Item Name", "item_name", ""); ?>
                 </div>
+                <div class="pt-2">
+                    <?php inputElement("<i class='fas fa-barcode''></i>", "Item SKU", "item_sku", ""); ?>
+                </div>
+                <div class="pt-2">
+                    <?php inputElement("<i class='fas fa-link''></i>", "Picture URL", "pictureUrl", ""); ?>
+                </div>
                 <div class="row pt-3">
                     <div class="col">
                         <?php inputElement("<i class='fas fa-info'></i>", "Description", "item_description", ""); ?>
+                    </div>
+                    <div class="col">
+                        <?php inputElement("<i class='fas fa-info'></i>", "Item Status", "item_status", ""); ?>
                     </div>
                     <div class="col">
                         <?php inputElement("<i class='fas fa-dollar-sign'></i>", "Price", "item_price", ""); ?>
@@ -47,6 +56,7 @@ require_once("../ItemsCrud/php/operation.php");
                     <div class="col">
                         <?php inputElement("<i class='fas fa-boxes'></i>", "Amount", "item_amount", ""); ?>
                     </div>
+
                 </div>
 
                 <div class="d-flex justify-content-center">
@@ -60,15 +70,18 @@ require_once("../ItemsCrud/php/operation.php");
         </div>
 
         <!-- Bootstrap table  -->
-        <div class="d-flex table-data">
+        <div class="d-flex table-data justify-content-center ">
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>Item Name</th>
                     <th>Item Description</th>
+                    <th>Item SKU</th>
                     <th>Item Price</th>
                     <th>Item Amount</th>
+                    <th>Item Picture URL</th>
+                    <th>Item Status</th>
                     <th>Edit</th>
                 </tr>
                 </thead>
@@ -76,7 +89,7 @@ require_once("../ItemsCrud/php/operation.php");
                 <?php
 
 
-                if (isset($_POST['read'])) {
+//                if (isset($_POST['read'])) {
                     $result = getData();
 
                     if ($result) {
@@ -84,18 +97,21 @@ require_once("../ItemsCrud/php/operation.php");
                         while ($row = mysqli_fetch_assoc($result)) { ?>
 
                             <tr>
-                                <td data-id="<?php echo $row['id']; ?>"><?php echo $row['id']; ?></td>
-                                <td data-id="<?php echo $row['id']; ?>"><?php echo $row['item_name']; ?></td>
-                                <td data-id="<?php echo $row['id']; ?>"><?php echo $row['item_description']; ?></td>
-                                <td data-id="<?php echo $row['id']; ?>"><?php echo '฿' . $row['item_price']; ?></td>
-                                <td data-id="<?php echo $row['id']; ?>"><?php echo $row['item_amount']; ?></td>
-                                <td><i class="fas fa-edit btnedit" data-id="<?php echo $row['id']; ?>"></i></td>
+                                <td data-id="<?php echo $row['ProductId']; ?>"><?php echo $row['ProductId']; ?></td>
+                                <td data-id="<?php echo $row['ProductId']; ?>"><?php echo $row['Name']; ?></td>
+                                <td data-id="<?php echo $row['ProductId']; ?>"><?php echo $row['ProductDesc']; ?></td>
+                                <td data-id="<?php echo $row['ProductId']; ?>"><?php echo $row['SKU']; ?></td>
+                                <td data-id="<?php echo $row['ProductId']; ?>"><?php echo '฿' . $row['Price']; ?></td>
+                                <td data-id="<?php echo $row['ProductId']; ?>"><?php echo $row['StockAmount']; ?></td>
+                                <td  data-id="<?php echo $row['ProductId']; ?>"><?php echo $row['PictureURI']; ?>></td>
+                                <td data-id="<?php echo $row['ProductId']; ?>"><?php echo $row['Status']; ?></td>
+                                <td><i class="fas fa-edit btnedit" data-id="<?php echo $row['ProductId']; ?>"></i></td>
                             </tr>
 
                             <?php
                         }
 
-                    }
+//                    }
                 }
 
 
@@ -119,6 +135,6 @@ require_once("../ItemsCrud/php/operation.php");
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-<script src="php/main.js"></script>
+<script src="../itemsCrud/php/main.js"></script>
 </body>
 </html>

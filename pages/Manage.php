@@ -47,7 +47,7 @@
             $("#onload").load("Orders.php ");
         });
         $("#load_ItemsCRUD").click(function () {
-            $("#onload").load("ItemsCRUD.php ");
+            $("#onload").load("../ItemsCrud/ItemsCRUD.php ");
         });
         $("#load_BooksCRUD").click(function () {
             $("#onload").load("BooksCrud.php ");
@@ -59,56 +59,63 @@
 <!-- Side navigation -->
 <div class="sidenav">
     <a href="index.php">MC Mart</a>
+    <div class="menu-nav">
+        <div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <button type="button" class="btn active" id="load_ItemsCRUD" aria-pressed="true">Items</button>
+                </li>
+                <li class="list-group-item">
+                    <button type="button" class="btn" onclick="" id="load_BooksCRUD">Requests</button>
+                </li>
+                <?php session_start(); if ($_SESSION['Role'] == 'Admin') : ?>
+                    <li class="list-group-item">
+                        <button type="button" class="btn" onclick="" id="">Accounts</button>
+                    </li>
+
+                <?php endif;?>
+<!--                <li class="list-group-item">-->
+<!--                    <button type="button" class="btn" onclick="" id="load_Cart">In-Cart</button>-->
+<!--                </li>-->
+
+            </ul>
+
+
+        </div>
+
+    </div>
+
 </div>
 
 <!-- Page content -->
 <div class="main">
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-
-        <div class="dropdown">
-            <button class="dropbtn btn-primary"><i class='fas fa-bars'></i></button>
-            <div class="dropdown-content">
-                <a href="../ItemsCrud/ItemsCrud.php" target="_blank">Manage Items</a>
-                <a href="../crud/index.php" target="_blank">Manage Books</a>
-            </div>
-        </div>
+<!---->
+<!--        <div class="dropdown">-->
+<!--            <button class="dropbtn btn-primary"><i class='fas fa-bars'></i></button>-->
+<!--            <div class="dropdown-content">-->
+<!--                <a href="../ItemsCrud/ItemsCrud.php" target="_blank">Manage Items</a>-->
+<!--                <a href="../crud/index.php" target="_blank">Manage Books</a>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="">
-            <h1>Hello Power User!</h1>
+            <h1 style="padding-right: 5px;">Hello <?php 
+                print_r($_SESSION['Name']);?></h1>
         </div>
 
         <div class="navbar-nav ml-auto">
-            <a href="../logout.php" class="nav-item nav-link" onclick=""><i class='fas fa-door-closed'></i></a>
+            <a href="logout.php" class="nav-item nav-link" onclick="">Logout<i class='fas fa-door-closed'></i></a>
         </div>
 
     </nav>
     <div class="Header">
-        <h1>MC Mart Pre-order and View</h1>
+        <h1>MC Mart Management system</h1>
     </div>
 
     <div>
         <div class="row ">
-            <div class="menu-nav col-md-2 ">
-                <div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <button type="button" class="btn" id="load_ItemList">Items</button>
-                        </li>
-                        <li class="list-group-item">
-                            <button type="button" class="btn" onclick="" id="load_ListBooks">Books</button>
-                        </li>
-                        <li class="list-group-item">
-                            <button type="button" class="btn" onclick="" id="load_Cart">In-Cart</button>
-                        </li>
-                        <li class="list-group-item">
-                            <button type="button" class="btn" onclick="" id="load_Option">Worker's Option</button>
-                        </li>
-                    </ul>
 
-
-                </div>
-
-            </div>
-            <div class="functionTab col-md-9">
+            <div class="functionTab">
                 <div id="onload">
 
                 </div>

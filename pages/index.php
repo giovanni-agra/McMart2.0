@@ -47,7 +47,7 @@
             $("#onload").load("Orders.php ");
         });
         $("#load_BooksCRUD").click(function () {
-            $("#onload").load("BooksCrud.php ");
+            $("#onload").load("Manage.php ");
         });
     });
 
@@ -56,11 +56,48 @@
 <!-- Side navigation -->
 <div class="sidenav">
     <a href="index.php">MC Mart</a>
+    <div class="menu-nav">
+    <div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <button type="button" class="btn active" id="load_ItemList" aria-pressed="true">Items</button>
+            </li>
+            <li class="list-group-item">
+                <button type="button" class="btn" onclick="" id="load_ListBooks">Books</button>
+            </li>
+<!--            <li class="list-group-item">-->
+<!--                <button type="button" class="btn" onclick="" id="load_Cart">In-Cart</button>-->
+<!--            </li>-->
+
+        </ul>
+
+
+    </div>
+
+</div>
 </div>
 
 <!-- Page content -->
 <div class="main">
     <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="">
+            <h1 style="padding-right: 5px;">Hello <?php session_start();
+                print_r($_SESSION['Name']);?></h1>
+        </div>
+
+        <?php
+//        session_start();
+        if($_SESSION['Role'] == 'Worker') : ?>
+
+
+                <a href="Manage.php"><button type="button" class="btn btn-primary btn-sm" onclick="" id="">Worker's Option</button></a>
+
+        <?php elseif ($_SESSION['Role'] == 'Admin') : ?>
+
+                <a href="Manage.php"><button type="button" class="btn btn-primary btn-sm" onclick="" id="">Admin's Option</button></a>
+
+
+        <?php endif;?>
 
 <!--        <div class="dropdown">-->
 <!--            <button class="dropbtn"><i class='fas fa-bars'></i></button>-->
@@ -74,38 +111,17 @@
 <!--        </div>-->
 
         <div class="navbar-nav ml-auto">
-            <a href="../logout.php" class="nav-item nav-link" onclick=""><i class='fas fa-door-closed'></i></a>
+            <a href="logout.php" class="nav-item nav-link" onclick=""> Logout<i class='fas fa-door-closed'></i></a>
         </div>
 
+
+
     </nav>
-    <div class="Header">
-        <h1>MC Mart Pre-order and View</h1>
-    </div>
 
     <div>
         <div class="row ">
-            <div class="menu-nav col-md-2 ">
-                <div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <button type="button" class="btn" id="load_ItemList">Items</button>
-                        </li>
-                        <li class="list-group-item">
-                            <button type="button" class="btn" onclick="" id="load_ListBooks">Books</button>
-                        </li>
-                        <li class="list-group-item">
-                            <button type="button" class="btn" onclick="" id="load_Cart">In-Cart</button>
-                        </li>
-                        <li class="list-group-item">
-                            <button type="button" class="btn" onclick="" id="load_BooksCRUD">Worker's Option</button>
-                        </li>
-                    </ul>
 
-
-                </div>
-
-            </div>
-            <div class="functionTab col-md-9">
+            <div class="functionTab ">
                 <div id="onload">
 
                 </div>

@@ -8,14 +8,20 @@ $(".btnedit").click(e => {
     ;
     let itemname = $("input[name*='item_name']");
     let itemdescription = $("input[name*='item_description']");
+    let itemsku = $("input[name*='item_sku']");
+    let itemurl = $("input[name*='pictureUrl']");
     let itemprice = $("input[name*='item_price']");
     let itemamount = $("input[name*='item_amount']");
+    let itemStatus = $("input[name*='item_status']");
 
     id.val(textvalues[0]);
     itemname.val(textvalues[1]);
     itemdescription.val(textvalues[2]);
-    itemprice.val(textvalues[3].replace("$", ""));
-    itemamount.val(textvalues[4]);
+    itemsku.val(textvalues[3]);
+    itemurl.val(textvalues[6]);
+    itemprice.val(textvalues[4].replace("฿", ""));
+    itemamount.val(textvalues[5]);
+    itemStatus.val(textvalues[7]);
 });
 
 

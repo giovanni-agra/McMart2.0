@@ -44,7 +44,7 @@
         <div class="OptionHeader">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-md navbar-light ">
-                    <h2>Item List</h2>
+                    <h2>Items List</h2>
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav">
@@ -74,46 +74,13 @@
     <div class="d-flex table-data">
         <table class="table table-striped table-dark" style="text-align: center; ">
             <thead class="thead-dark">
-            <tr>
-                <th>Picture</th>
-                <th>Item Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Status</th>
-            </tr>
-            <tr style="height: 60px;">
-                <td>
-                    <button class="popup" onclick="showDetail()"><img
-                                src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
-                                alt="" style="width:50px;height:50px;"></button>
-                </td>
-                <td>Pen</td>
-                <td>Quantum pen 0.5</td>
-                <td>60 baht</td>
-                <td>InStock</td>
-            </tr>
-            <tr style="height: 60px; ">
-                <td>
-                    <button><img
-                                src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
-                                alt="" style="width:50px;height:50px;"></button>
-                </td>
-                <td>Pen</td>
-                <td>Quantum pen 0.5</td>
-                <td>60 baht</td>
-                <td>InStock</td>
-            </tr>
-            <tr style="height: 60px; text-align:center">
-                <td>
-                    <button><img
-                                src="https://i2.wp.com/www.charitycomms.org.uk/wp-content/uploads/2019/02/placeholder-image-square.jpg?resize=400%2C300&ssl=1"
-                                alt="" style="width:50px;height:50px;"/></button>
-                </td>
-                <td>Pen</td>
-                <td>Quantum pen 0.5</td>
-                <td>60 baht</td>
-                <td>InStock</td>
-            </tr>
+<!--                        included process here-->
+            <?php
+                    require("../requires/product_list_process.php");
+                     $all_query = new DatabaseQuery();
+                     echo $all_query->query1();
+            ?>
+
             </thead>
             <tbody >
 

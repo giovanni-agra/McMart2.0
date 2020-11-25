@@ -1,9 +1,10 @@
 <?php
 
-require_once("db.php");
-require_once("component.php");
 
-$con = Createdb();
+require_once("../ItemsCrud/php/component.php");
+require("../includes/db.inc.php");
+
+
 
 // create button click
 if (isset($_POST['create'])) {
@@ -25,18 +26,23 @@ if (isset($_POST['deleteall'])) {
 
 function createData()
 {
-    $itemid = textboxValue("item_id");
+
+//    $itemid = textboxValue("item_id");
     $itemname = textboxValue("item_name");
     $itemdescription = textboxValue("item_description");
     $itemprice = textboxValue("item_price");
     $itemamount = textboxValue("item_amount");
+    $itemSku = textboxValue('item_sku');
+    $pictureURL = textboxValue("pictureUrl");
+    $datenow = time();
+    $status =  textboxValue("item_status");
 
-    if ($itemid && $itemname && $itemdescription && $itemprice && $itemamount) {
+    if ($itemname && $itemdescription && $itemprice && $itemamount) {
 
-        $sql = "INSERT INTO items (id,item_name, item_description, item_price, item_amount) 
-                        VALUES ('$itemid','$itemname','$itemdescription','$itemprice','$itemamount')";
+        $sql = "INSERT INTO products (Name, ProductDesc, Price, StockAmount,Status,PictureURI,SKU) 
+                        VALUES ('$itemname','$itemdescription','$itemprice','$itemamount','$status','$pictureURL','$itemSku' )";
 
-        if (mysqli_query($GLOBALS['con'], $sql)) {
+        if (mysqli_query($GLOBALS['conn'], $sql)) {
             TextNode("success", "Record Successfully Inserted...!");
         } else {
             echo "Error From Create Data";
@@ -49,7 +55,8 @@ function createData()
 
 function textboxValue($value)
 {
-    $textbox = mysqli_real_escape_string($GLOBALS['con'], trim($_POST[$value]));
+
+    $textbox = mysqli_real_escape_string($GLOBALS['conn'], trim($_POST[$value]));
     if (empty($textbox)) {
         return false;
     } else {
@@ -69,11 +76,12 @@ function TextNode($classname, $msg)
 // get data from mysql database
 function getData()
 {
-    $sql = "SELECT * FROM items";
 
-    $result = mysqli_query($GLOBALS['con'], $sql);
+    $sql = "SELECT * FROM products";
 
-    if (mysqli_num_rows($result) > 0) {
+    $result = mysqli_query($GLOBALS['conn'], $sql);
+
+    if (!$result || mysqli_num_rows($result) > 0) {
         return $result;
     }
 }
@@ -86,13 +94,17 @@ function UpdateData()
     $itemdescription = textboxValue("item_description");
     $itemprice = textboxValue("item_price");
     $itemamount = textboxValue("item_amount");
+    $itemSku = textboxValue('item_sku');
+    $pictureURL = textboxValue("pictureUrl");
+    $datenow = time();
+    $status =  textboxValue("item_status");
 
-    if ($itemname && $itemdescription && $itemprice && $itemamount) {
+    if ($itemname && $itemdescription && $itemprice && $itemamount && $pictureURL && $itemSku) {
         $sql = "
-                    UPDATE items SET item_name='$itemname', item_description = '$itemdescription', item_price = '$itemprice',item_amount='$itemamount' WHERE id='$itemid';                    
+                    UPDATE products SET Name='$itemname', ProductDesc = '$itemdescription',Price= '$itemprice',SKU='$itemSku',StockAMount='$itemamount',PictureURI = '$pictureURL' WHERE ProductId='$itemid';                    
         ";
 
-        if (mysqli_query($GLOBALS['con'], $sql)) {
+        if (mysqli_query($GLOBALS['conn'], $sql)) {
             TextNode("success", "Data Successfully Updated");
         } else {
             TextNode("error", "Enable to Update Data");
@@ -110,9 +122,9 @@ function deleteRecord()
 {
     $itemid = (int)textboxValue("item_id");
 
-    $sql = "DELETE FROM items WHERE id=$itemid";
+    $sql = "DELETE FROM products WHERE ProductId=$itemid";
 
-    if (mysqli_query($GLOBALS['con'], $sql)) {
+    if (mysqli_query($GLOBALS['conn'], $sql)) {
         TextNode("success", "Record Deleted Successfully...!");
     } else {
         TextNode("error", "Enable to Delete Record...!");
@@ -139,9 +151,9 @@ function deleteBtn()
 
 function deleteAll()
 {
-    $sql = "DROP TABLE items";
+    $sql = "DELETE * FROM products";
 
-    if (mysqli_query($GLOBALS['con'], $sql)) {
+    if (mysqli_query($GLOBALS['conn'], $sql)) {
         TextNode("success", "All Record deleted Successfully...!");
         Createdb();
     } else {
