@@ -12,11 +12,11 @@ try {
     mysqli_set_charset($conn, 'utf8');
     if (mysqli_connect_errno())
     {
-//        echo "Failed To Connect".mysqli_connect_error();
+        echo "Failed To Connect".mysqli_connect_error();
         exit();
 
     }else{
-//        echo "connected to db";
+        echo "connected to db";
 
     }
 }

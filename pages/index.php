@@ -90,11 +90,11 @@
         if($_SESSION['Role'] == 'Worker') : ?>
 
 
-                <a href="Manage.php"><button type="button" class="btn btn-primary btn-sm" onclick="" id="">Worker's Option</button></a>
+                <a href="../manage/Manage.php"><button type="button" class="btn btn-primary btn-sm" onclick="" id="">Worker's Option</button></a>
 
         <?php elseif ($_SESSION['Role'] == 'Admin') : ?>
 
-                <a href="Manage.php"><button type="button" class="btn btn-primary btn-sm" onclick="" id="">Admin's Option</button></a>
+                <a href="../manage/Manage.php"><button type="button" class="btn btn-primary btn-sm" onclick="" id="">Admin's Option</button></a>
 
 
         <?php endif;?>

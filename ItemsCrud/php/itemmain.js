@@ -1,4 +1,4 @@
-let id = $("input[name*='item_id']")
+var itemid = $("input[name*='item_id']")
 //id.attr("readonly","readonly");
 
 
@@ -14,14 +14,14 @@ $(".btnedit").click(e => {
     let itemamount = $("input[name*='item_amount']");
     let itemStatus = $("input[name*='item_status']");
 
-    id.val(textvalues[0]);
+    itemid.val(textvalues[0]);
     itemname.val(textvalues[1]);
-    itemdescription.val(textvalues[2]);
-    itemsku.val(textvalues[3]);
-    itemurl.val(textvalues[6]);
-    itemprice.val(textvalues[4].replace("฿", ""));
-    itemamount.val(textvalues[5]);
-    itemStatus.val(textvalues[7]);
+    itemdescription.val(textvalues[3]);
+    itemsku.val(textvalues[4]);
+    itemurl.val(textvalues[7]);
+    itemprice.val(textvalues[5].replace("฿", ""));
+    itemamount.val(textvalues[6]);
+    itemStatus.val(textvalues[8]);
 });
 
 

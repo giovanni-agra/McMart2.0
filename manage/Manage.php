@@ -12,19 +12,19 @@
     <!-- styles -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <!-- <link href="assets/css/bootstrap.css" rel="stylesheet">-->
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="assets/css/prettyPhoto.css" rel="stylesheet">
-    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-    <link href="assets/css/flexslider.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/color/default.css" rel="stylesheet">
+<!--    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">-->
+<!--    <link href="assets/css/prettyPhoto.css" rel="stylesheet">-->
+<!--    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">-->
+<!--    <link href="assets/css/flexslider.css" rel="stylesheet">-->
+<!--    <link href="assets/css/style.css" rel="stylesheet">-->
+<!--    <link href="assets/color/default.css" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,600,400italic|Open+Sans:400,600,700"
           rel="stylesheet">
 
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+<!--    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../pages/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,31 +34,22 @@
     <title>McMart Apps</title>
 </head>
 
-<body>
 <script>
     $(document).ready(function () {
-        $("#load_ItemList").click(function () {
-            $("#onload").load("ListItems.php #ItemOrder");
-        });
-        $("#load_ListBooks").click(function () {
-            $("#onload").load("ListBooks.php ");
-        });
-        $("#load_Cart").click(function () {
-            $("#onload").load("Orders.php ");
-        });
         $("#load_ItemsCRUD").click(function () {
-            $("#onload").load("../ItemsCrud/ItemsCRUD.php ");
+            $("#onload").load("../itemsCrud/itemsCrud.php ");
         });
         $("#load_accounts").click(function () {
-            $("#onload").load("../pages/accountManage/accountManage.php ");
+            $("#onload").load("accountManage.php ");
         });
     });
 
 </script>
+<body>
 
 <!-- Side navigation -->
 <div class="sidenav">
-    <a href="index.php">MC Mart</a>
+    <a href="../pages/index.php">MC Mart</a>
     <div class="menu-nav">
         <div>
             <ul class="list-group list-group-flush">
@@ -104,7 +95,7 @@
         </div>
 
         <div class="navbar-nav ml-auto">
-            <a href="logout.php" class="nav-item nav-link" onclick="">Logout<i class='fas fa-door-closed'></i></a>
+            <a href="../pages/logout.php" class="nav-item nav-link" onclick="">Logout<i class='fas fa-door-closed'></i></a>
         </div>
 
     </nav>

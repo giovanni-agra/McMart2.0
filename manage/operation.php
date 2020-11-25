@@ -1,7 +1,7 @@
 <?php
 
 
-require_once("../ItemsCrud/php/component.php");
+require_once("component.php");
 require("../includes/db.inc.php");
 
 
@@ -24,34 +24,34 @@ if (isset($_POST['deleteall'])) {
 
 }
 
-function createData()
-{
-
-//    $itemid = textboxValue("item_id");
-    $itemname = textboxValue("item_name");
-    $itemdescription = textboxValue("item_description");
-    $itemprice = textboxValue("item_price");
-    $itemamount = textboxValue("item_amount");
-    $itemSku = textboxValue('item_sku');
-    $pictureURL = textboxValue("pictureUrl");
-    $datenow = time();
-    $status =  textboxValue("item_status");
-
-    if ($itemname && $itemdescription && $itemprice && $itemamount) {
-
-        $sql = "INSERT INTO products (Name, ProductDesc, Price, StockAmount,Status,PictureURI,SKU) 
-                        VALUES ('$itemname','$itemdescription','$itemprice','$itemamount','$status','$pictureURL','$itemSku' )";
-
-        if (mysqli_query($GLOBALS['conn'], $sql)) {
-            TextNode("success", "Record Successfully Inserted...!");
-        } else {
-            echo "Error From Create Data";
-        }
-
-    } else {
-        TextNode("error", "Provide Data in the Textbox");
-    }
-}
+//function createData()
+//{
+//
+////    $itemid = textboxValue("item_id");
+//    $itemname = textboxValue("item_name");
+//    $itemdescription = textboxValue("item_description");
+//    $itemprice = textboxValue("item_price");
+//    $itemamount = textboxValue("item_amount");
+//    $itemSku = textboxValue('item_sku');
+//    $pictureURL = textboxValue("pictureUrl");
+//    $datenow = time();
+//    $status =  textboxValue("item_status");
+//
+//    if ($itemname && $itemdescription && $itemprice && $itemamount) {
+//
+//        $sql = "INSERT INTO products (Name, ProductDesc, Price, StockAmount,Status,PictureURI,SKU)
+//                        VALUES ('$itemname','$itemdescription','$itemprice','$itemamount','$status','$pictureURL','$itemSku' )";
+//
+//        if (mysqli_query($GLOBALS['conn'], $sql)) {
+//            TextNode("success", "Record Successfully Inserted...!");
+//        } else {
+//            echo "Error From Create Data";
+//        }
+//
+//    } else {
+//        TextNode("error", "Provide Data in the Textbox");
+//    }
+//}
 
 function textboxValue($value)
 {
@@ -77,7 +77,7 @@ function TextNode($classname, $msg)
 function getData()
 {
 
-    $sql = "SELECT * FROM products";
+    $sql = "SELECT * FROM users";
 
     $result = mysqli_query($GLOBALS['conn'], $sql);
 
@@ -89,19 +89,16 @@ function getData()
 // update dat
 function UpdateData()
 {
-    $itemid = textboxValue("item_id");
-    $itemname = textboxValue("item_name");
-    $itemdescription = textboxValue("item_description");
-    $itemprice = textboxValue("item_price");
-    $itemamount = textboxValue("item_amount");
-    $itemSku = textboxValue('item_sku');
-    $pictureURL = textboxValue("pictureUrl");
-    $datenow = time();
-    $status =  textboxValue("item_status");
+    $userId = textboxValue("userId");
+    $Name = textboxValue("name");
+    $username = textboxValue("username");
+    $email = textboxValue("email");
+    $role = textboxValue("role");
 
-    if ($itemname && $itemdescription && $itemprice && $itemamount && $pictureURL && $itemSku) {
+
+    if ($userId && $Name && $username && $email && $role) {
         $sql = "
-                    UPDATE products SET Name='$itemname', ProductDesc = '$itemdescription',Price= '$itemprice',SKU='$itemSku',StockAMount='$itemamount',PictureURI = '$pictureURL' WHERE ProductId='$itemid';                    
+                    UPDATE users SET Name='$Name', UserName = '$username',Email= '$email',Role='$role' WHERE UserID='$userId';                    
         ";
 
         if (mysqli_query($GLOBALS['conn'], $sql)) {
@@ -120,9 +117,9 @@ function UpdateData()
 
 function deleteRecord()
 {
-    $itemid = (int)textboxValue("item_id");
+    $userid = (int)textboxValue("userId");
 
-    $sql = "DELETE FROM products WHERE ProductId=$itemid";
+    $sql = "DELETE FROM user WHERE UserID= $userid";
 
     if (mysqli_query($GLOBALS['conn'], $sql)) {
         TextNode("success", "Record Deleted Successfully...!");
@@ -169,7 +166,7 @@ function setID()
     $id = 0;
     if ($getid) {
         while ($row = mysqli_fetch_assoc($getid)) {
-            $id = $row['id'];
+            $id = $row['UserID'];
         }
     }
     return ($id + 1);

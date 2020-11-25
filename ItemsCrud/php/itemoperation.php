@@ -1,13 +1,13 @@
 <?php
 
 
+require_once("itemcomponent.php");
 require("../includes/db.inc.php");
-require_once("../pages/accountmanage/component.php");
-
 
 
 // create button click
 if (isset($_POST['create'])) {
+//    echo "<script>console.log('point')</script>";
     createData();
 }
 
@@ -37,7 +37,7 @@ function createData()
     $datenow = time();
     $status =  textboxValue("item_status");
 
-    if ($itemname && $itemdescription && $itemprice && $itemamount) {
+    if ($itemname && $itemdescription && $itemprice && $itemamount && $itemSku && $pictureURL && $status) {
 
         $sql = "INSERT INTO products (Name, ProductDesc, Price, StockAmount,Status,PictureURI,SKU) 
                         VALUES ('$itemname','$itemdescription','$itemprice','$itemamount','$status','$pictureURL','$itemSku' )";
