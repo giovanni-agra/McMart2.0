@@ -49,8 +49,8 @@
         $("#load_ItemsCRUD").click(function () {
             $("#onload").load("../ItemsCrud/ItemsCRUD.php ");
         });
-        $("#load_BooksCRUD").click(function () {
-            $("#onload").load("BooksCrud.php ");
+        $("#load_accounts").click(function () {
+            $("#onload").load("../pages/accountManage/accountManage.php ");
         });
     });
 
@@ -70,7 +70,7 @@
                 </li>
                 <?php session_start(); if ($_SESSION['Role'] == 'Admin') : ?>
                     <li class="list-group-item">
-                        <button type="button" class="btn" onclick="" id="">Accounts</button>
+                        <button type="button" class="btn" onclick="" id="load_accounts">Accounts</button>
                     </li>
 
                 <?php endif;?>
@@ -99,7 +99,7 @@
 <!--            </div>-->
 <!--        </div>-->
         <div class="">
-            <h1 style="padding-right: 5px;">Hello <?php 
+            <h1 style="padding-right: 5px;">Hello <?php
                 print_r($_SESSION['Name']);?></h1>
         </div>
 
