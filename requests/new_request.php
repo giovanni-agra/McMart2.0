@@ -66,7 +66,7 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
 
-                <?php include('includes/nav_bar.php'); ?>
+                <?php include('../includes/nav_bar.php'); ?>
 
             </div>
         </nav>
@@ -146,7 +146,7 @@
 
         <nav class="static-bottom">
             <div class="container">
-                <?php include('includes/footer.php'); ?>
+                <?php include('../includes/footer.php'); ?>
             </div>
         </nav>
     </body>

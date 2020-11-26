@@ -14,7 +14,7 @@
 <div class="container">
 
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.php">McMart 2.0</a>
+        <a class="navbar-brand" href="/McMart2.0/index.php">McMart 2.0</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,7 +24,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="category1_index.php">Category1</a>
+                        <a class="dropdown-item" href="/McMart2.0/category1_index.php">Category1</a>
                         <a class="dropdown-item" href="contactList.php">Category2</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="newAsset.php">Category3</a>
@@ -32,7 +32,7 @@
                     </div>
                 </li>
                 </li><li class="nav-item">
-                    <a class="nav-link " href="checkIn.php">Request</a>
+                    <a class="nav-link " href="/McMart2.0/requests/request_list.php">Request</a>
                 </li>
 
             </ul>

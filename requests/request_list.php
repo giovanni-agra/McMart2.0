@@ -48,7 +48,7 @@
 <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
 
-        <?php include('includes/nav_bar.php'); ?>
+        <?php include('../includes/nav_bar.php'); ?>
 
     </div>
 </nav>
@@ -66,17 +66,18 @@
 <div class="container-fluid">
     <?php
 
-    $servername = "127.0.0";
-    $username = "root";
-    $password = "wordpass123";
-    $dbname = "mcmart";
+//    $servername = "127.0.0";
+//    $username = "root";
+//    $password = "wordpass123";
+//    $dbname = "mcmart";
+//
+//    $conn = new mysqli($servername, $username, $password, $dbname);
+//    // Check connection
+//    if ($conn->connect_error) {
+//        die("Connection failed: " . $conn->connect_error);
+//    }
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
+    require ("../includes/db.inc.php");
     $sql = "SELECT * FROM requests";
     $result = $conn->query($sql);
 
