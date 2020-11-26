@@ -1,7 +1,7 @@
 <?php
 
 
-require_once("itemcomponent.php");
+require_once("request_component.php");
 require("../includes/db.inc.php");
 
 
@@ -155,7 +155,6 @@ function deleteAll()
 
     if (mysqli_query($GLOBALS['conn'], $sql)) {
         TextNode("success", "All Record deleted Successfully...!");
-        Createdb();
     } else {
         TextNode("error", "Something Went Wrong Record cannot deleted...!");
     }
