@@ -24,7 +24,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/McMart2.0/category1_index.php">Category1</a>
+                        <a class="dropdown-item" href="/McMart2.0/products/food_index.php">Category1</a>
                         <a class="dropdown-item" href="contactList.php">Category2</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="newAsset.php">Category3</a>

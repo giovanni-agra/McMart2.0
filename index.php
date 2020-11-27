@@ -40,35 +40,75 @@
     </nav>
 </header>
 
-<?php
-// Include the database configuration file
-require ('includes/db.inc.php');
-
-function categoryTree($parent_id = 0, $CategoryName){
-    global $db;
-    // Need to make a new table for Category to separate types of product
-    $query = $db->query("SELECT * FROM Products WHERE parent_id = $parent_id ORDER BY name ASC");
-   
-    if($query->num_rows > 0){
-        while($row = $query->fetch_assoc()){
-            echo '<option value="'.$row['id'].'">'.'</option>';
-            categoryTree($row['id']);
-        }
-    }
-}
-?>
-
 <h1 class="text-center">PRODUCT'S CATEGORY</h1>
 
     <div class="container mb-5 justify-content-center">
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-4 text-center">
                 <div class="card btn-no-waves" style="width: 18rem;">
                     <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title"><?php $CategoryName ?></h5>
-                        <p class="card-text">Description of the Category</p>
-                        <a href="#" target="_blank" class="stretched-link btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">Food</h5>
+                        <hr>
+                        <p class="card-text">No need to go outside.</p>
+                        <a href="products/food_index.php" target="_blank" class="stretched-link btn btn-primary">See Products</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-4 text-center">
+                <div class="card btn-no-waves" style="width: 18rem;">
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Books</h5>
+                        <hr>
+                        <p class="card-text">Find your Course's books in here.</p>
+                        <a href="#" target="_blank" class="stretched-link btn btn-primary">See Products</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-4 text-center">
+                <div class="card btn-no-waves" style="width: 18rem;">
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Medicine</h5>
+                        <hr>
+                        <p class="card-text">All light medicines.</p>
+                        <a href="#" target="_blank" class="stretched-link btn btn-primary">See Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4 text-center">
+                <div class="card btn-no-waves" style="width: 18rem;">
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Stationary</h5>
+                        <hr>
+                        <p class="card-text">Find any types of drawing and writing items in here.</p>
+                        <a href="#" target="_blank" class="stretched-link btn btn-primary">See Products</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-4 text-center">
+                <div class="card btn-no-waves" style="width: 18rem;">
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Uniform</h5>
+                        <hr>
+                        <p class="card-text">Upper uniform, Lower uniform, belt, pin, etc.</p>
+                        <a href="#" target="_blank" class="stretched-link btn btn-primary">See Products</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-4 text-center">
+                <div class="card btn-no-waves" style="width: 18rem;">
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Find other products</h5>
+                        <hr>
+                        <p class="card-text">You can see other products in here.</p>
+                        <a href="#" target="_blank" class="stretched-link btn btn-primary">See Products</a>
                     </div>
                 </div>
             </div>

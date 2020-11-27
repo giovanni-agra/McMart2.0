@@ -62,7 +62,7 @@ require("../products/product_component.php")
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql = "SELECT * FROM Products WHERE Products.ProductCategory = 'Category1'";
+                $sql = "SELECT * FROM Products WHERE Products.ProductCategory = 'Food'";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
