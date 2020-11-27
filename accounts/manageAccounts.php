@@ -1,7 +1,7 @@
 <?php
 //
 require_once("../includes/db.inc.php");
-require ("requires/request_operation.php");
+require ("account_operation.php");
 //if(isset($_POST['delete'])){
 //    global $a ;
 //    $a = isset($_POST['RequestsID']) ;
@@ -68,16 +68,16 @@ require ("requires/request_operation.php");
 <body>
 
 <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
 
-            <?php include('../includes/nav_bar.php'); ?>
+        <?php include('../includes/nav_bar.php'); ?>
 
-        </div>
-    </nav>
+    </div>
+</nav>
 
 <br>
-<h1 class="text-center">LIST OF REQUESTS</h1>
+<h1 class="text-center">Accounts</h1>
 <br>
 <hr>
 <br>
@@ -89,35 +89,30 @@ require ("requires/request_operation.php");
 <div class="container-fluid">
     <?php
 
-//    $servername = "127.0.0";
-//    $username = "root";
-//    $password = "wordpass123";
-//    $dbname = "mcmart";
-//
-//    $conn = new mysqli($servername, $username, $password, $dbname);
-//    // Check connection
-//    if ($conn->connect_error) {
-//        die("Connection failed: " . $conn->connect_error);
-//    }
+    //    $servername = "127.0.0";
+    //    $username = "root";
+    //    $password = "wordpass123";
+    //    $dbname = "mcmart";
+    //
+    //    $conn = new mysqli($servername, $username, $password, $dbname);
+    //    // Check connection
+    //    if ($conn->connect_error) {
+    //        die("Connection failed: " . $conn->connect_error);
+    //    }
 
 
-    $sql = "SELECT * FROM requests";
+    $sql = "SELECT * FROM users";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         echo '<table class="table table-bordered">    
                     <tr class="table-primary">
-                     <th scope="col">Request ID</th>
-                    <th scope="col">User Request Name</th>
-                    <th scope="col">User ID Number</th>
-                    <th scope="col">Date Requested</th>
-                    <th scope="col">Item Name</th>
-                    <th scope="col">Product Category</th>
-                    <th scope="col">Request Quantity</th>
-                    <th scope="col">Product Request Description</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Date Fullfilled</th>
-                    <th scope="col">Done?</th>
+                     <th scope="col">User ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Update</th>
                     <th scope="col">Delete</th>
                     
                     </tr>';
@@ -139,37 +134,25 @@ require ("requires/request_operation.php");
 //                    <td><input type="submit" value="Delete" name="delete" class="btn btn-danger"/></td>
 //                    </tr>
 //                    </form> ';
-                        echo'<form method="POST" action="">
+            echo '<form method="POST" action="">
                     <tr>
-                    <input hidden type="text" name="RequestsID" value="'.$row['RequestID'].'" />
-                    <td>' . $row['RequestID'] . '</td>
-                    <!-- <td><input type="text" name="UserRequestName" value="'.$row['UserRequestName'].'" /></td>-->
-                    <td>' . $row['UserRequestName'] . '</td>
-                    <td>' . $row['UserRequestIDNumber'] . '</td>
-                    <td>' . $row['DateRequests'] . '</td>
-                    <td>' . $row['ItemName'] . '</td>
-                    <td>' . $row['ProductCategory'] . '</td>
-                    <td>' . $row['RequestQuantity'] . '</td>
-                    <td>' . $row['ProductRequestDesc'] . '</td>';
-                    if ($row['Status'] == "Not fullfilled"){
-                        echo '<td><span class="badge badge-warning">' . $row['Status'] . '</span></td>
-                        <td>' . $row['DateFullFiled'] . '</td>
-                        <td><input type="submit" value="Update" name="update" class="btn btn-success"/></td>
-                        <td><input type="submit" value="Delete" name="delete" class="btn btn-danger"/></td>
-                        </tr>
-                        </form> ';
-                    }else{
-                        echo '<td><span class="badge badge-success">' . $row['Status'] . '</span></td>
-                        <td>' . $row['DateFullFiled'] . '</td>
-                        <td><button hidden type="button" class="btn btn-info">Update</button></td>
-                        <td><input type="submit" value="Delete" name="delete" class="btn btn-danger"/></td>
-                        </tr>
-                        </form> ';
-                    }
-}
+                    <input hidden type="text" name="UserID" value="' . $row['UserID'] . '" />
+                    <td>' . $row['UserID'] . '</td>
+                   <td><input type="text" name="Name" value="' . $row['Name'] . '" /></td>
+                   <td><input type="text" name="UserName" value="' . $row['UserName'] . '" /></td>
+                   <td><input type="text" name="Email" value="' . $row['Email'] . '" /></td>
+                   <td><select class="form-control" name="Role" id="Role" >
+                              <option value="Worker"'; if($row['Role'] == 'Worker'){ echo "selected";}  echo'>Worker</option>
+                              <option value="Admin"'; if($row['Role'] == 'Admin'){ echo "selected";}  echo'>Admin</option>
+                            </select></td>
+                   <td><input type="submit" value="Update" name="update" class="btn btn-success"/></td>
+                   <td><input type="submit" value="Delete" name="delete" class="btn btn-danger"/></td>
+                    </tr>
+               </form> ';
+        }
+
         echo '</table>';
-    }
-    else {
+    }else {
         echo "0 results";
     }
     $conn->close();

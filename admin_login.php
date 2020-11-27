@@ -1,6 +1,10 @@
 
 <?php
 require('includes/db.inc.php');
+if(!empty($_SESSION)) {
+    session_unset();
+    session_destroy();
+}
 if ($_POST) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -27,18 +31,24 @@ if ($_POST) {
                 session_start();
                 $_SESSION['Role'] = 'Worker';
                 $_SESSION['Name'] = $name;
-                header('location:pages/index.php');
+                $_SESSION['Loggedin'] = True;
+                header('location:index.php');
             }
             if ($role ==  'Admin'){
                 session_start();
                 $_SESSION['Role'] = 'Admin';
                 $_SESSION['Name'] = $name;
-                header('location:pages/index.php');
+                $_SESSION['Loggedin'] = True;
+                header('location:index.php');
             }
         }else{
 
             echo "<P> INVALID PASSWORD </P>";
         }
+
+
+
+
 
     }else {
         echo "<p>User not found.</p>";
@@ -46,6 +56,8 @@ if ($_POST) {
 }
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -87,13 +99,13 @@ if ($_POST) {
     <div class="container mb-5 justify-content-center text-center">
     <img src="assets/images/mcmart2.0logo.png" class="img-fluid" alt="Responsive image">
             <div class="login-form">
-                    <form action="/examples/actions/confirmation.php" method="post">
+                    <form action="" method="post">
                         <h2 class="text-center">SIGN IN</h2>       
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Username" required="required">
+                            <input type="text" class="form-control" placeholder="Username" required="required" name="username">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" required="required">
+                            <input type="password" class="form-control" placeholder="Password" required="required" name="password">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block">SIGN IN</button>
@@ -105,7 +117,7 @@ if ($_POST) {
                         <h4 class="alert-heading">Warning!</h4><hr>
                         <p>If you are not an Admin,<br>Return to the Home Page</p>
                     </div>
-                    <a href="#" class="btn btn-primary btn-block" role="button" aria-pressed="true">Home Page</a>  
+                    <a href="index.php" class="btn btn-primary btn-block" role="button" aria-pressed="true">Home Page</a>
             </div>      
     </div>
 </body>

@@ -37,10 +37,28 @@
             <?php include('includes/nav_bar.php'); ?>
 
         </div>
+
     </nav>
+
 </header>
 
+
+<?php
+// Include the database configuration file
+require ('includes/db.inc.php');
+
+//if($_SESSION['Loggedin'] = True){
+//
+//}else {
+
+//    $_SESSION['Loggedin'] = false;
+//}
+
+?>
+
 <h1 class="text-center">PRODUCT'S CATEGORY</h1>
+
+
 
     <div class="container mb-5 justify-content-center">
         <div class="form-row">

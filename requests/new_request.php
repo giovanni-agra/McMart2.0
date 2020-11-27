@@ -1,78 +1,83 @@
+<?php
+//
+require_once("../includes/db.inc.php");
+//require ("requires/request_operation.php");
+//if(isset($_POST['delete'])){
+//    global $a ;
+//    $a = isset($_POST['RequestsID']) ;
+//    $sql = "DELETE FROM requests WHERE RequestID='$a'";
+//    if(mysqli_query($conn,$sql)){
+//        $message = "Requests With ID: $a  Deleted";
+//        echo "<script type='text/javascript'>alert('$message');</script>";
+//        echo "<script type='text/javascript'> document.location = 'request_list.php'; </script>";
+//        exit();
+//    }else{
+//        $message = "Requests Failed to be Deleted.Please Contact Administrator";
+//        echo "<script type='text/javascript'>alert('$message');</script>";
+////        echo '<p>' . mysqli_error($conn) . '<br><br>Query:' . $sql . '</p>';
+//        echo "<script type='text/javascript'> document.location = 'request_list.php'; </script>";
+//        mysqli_close($conn);
+//        exit();
+//    }
+//}
+//?>
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.min.css" rel="stylesheet">
 
-        <!-- styles -->
-        <link href="assets/css/bootstrap.css" rel="stylesheet">
-        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-        <link href="assets/css/prettyPhoto.css" rel="stylesheet">
-        <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-        <link href="assets/css/flexslider.css" rel="stylesheet">
-        <link href="assets/css/style.css" rel="stylesheet">
-        <link href="assets/color/default.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,600,400italic|Open+Sans:400,600,700" rel="stylesheet">
-        <style>
-            .btn btn-primary btn-lg btn-block {
-                padding: 13px;
-                background-color: #5d9cec;
-                color: white;
-                cursor: pointer;
-                border-radius: 4px;
-                width: 100%;
-                border: #5791da 1px solid;
-                font-size: 1.1em;
-            }
+    <style>
+        .btnLogin {
+            padding: 13px;
+            background-color: #5d9cec;
+            color: #f5f7fa;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            border: #5791da 1px solid;
+            font-size: 1.1em;
+        }
 
-            .demo-input-box {
-                padding: 13px;
-                border: #CCC 1px solid;
-                border-radius: 4px;
-                width: 100%;
-            }
+        .demo-input-box {
+            padding: 13px;
+            border: #CCC 1px solid;
+            border-radius: 4px;
+            width: 100%;
+        }
 
-            i {
-                border: solid black;
-                border-width: 0 3px 3px 0;
-                display: inline-block;
-                padding: 3px;
-            }
-            .up {
-                transform: rotate(-135deg);
-                -webkit-transform: rotate(-135deg);
-            }
+    </style>
 
-            form label1{
-                font-weight: bold;
-            }
-        </style>
+</head>
+<body>
 
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- Navigation -->
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
 
-    </head>
+        <?php include('../includes/nav_bar.php'); ?>
 
-    <body>
-        <nav class="navbar navbar-light bg-light static-top">
-            <div class="container">
-
-                <?php include('../includes/nav_bar.php'); ?>
-
-            </div>
-        </nav>
+    </div>
+</nav>
 
 
-        <br>
+<br>
         <h2 class="text-center">NEW ITEM REQUEST</h2>
         <br>
         <br>
