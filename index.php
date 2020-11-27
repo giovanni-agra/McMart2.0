@@ -42,7 +42,7 @@
 
 <?php
 // Include the database configuration file
-require '../includes/db.inc.php';
+require ('includes/db.inc.php');
 
 function categoryTree($parent_id = 0, $CategoryName){
     global $db;

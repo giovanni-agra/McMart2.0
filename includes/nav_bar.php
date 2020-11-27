@@ -32,7 +32,7 @@
                     </div>
                 </li>
                 </li><li class="nav-item">
-                    <a class="nav-link " href="/McMart2.0/requests/request_list.php">Request</a>
+                    <a class="nav-link " href="/McMart2.0/requests/new_request.php">Request</a>
                 </li>
 
             </ul>

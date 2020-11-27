@@ -61,13 +61,14 @@ CREATE TABLE IF NOT EXISTS McMart.Requests
 (
   RequestID           INT          NOT NULL AUTO_INCREMENT,
   DateRequests        DATE         NOT NULL ,
-  DateFullFiled       DATE         NOT NULL ,
+  DateFullFiled       DATE         ,
   UserRequestName     VARCHAR(255) NOT NULL ,
   UserRequestIDNumber INT          NOT NULL ,
   ItemName            VARCHAR(255) NOT NULL ,
   ProductCategory     VARCHAR(255) NOT NULL ,
   RequestQuantity     INT          NOT NULL ,
   ProductRequestDesc  VARCHAR(500) NOT NULL ,
+  Status              VARCHAR(50)  NOT NULL ,
   PRIMARY KEY (RequestID)
 
 );

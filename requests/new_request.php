@@ -113,18 +113,23 @@
                     <hr>
                     <div class="form-row">
                         <div class="form-group col-md-4">
+                            <label for="ItemName">Item Quantity: </label>
+                            <input type="number" class="demo-input-box" name="ItemQuantity" id="ItemQuantity" placeholder="Quantity of the Item"
+                                   value="<?php if(isset($_POST['ItemQuantity'])) echo $_POST['ItemQuantity']; ?>" width="276" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
                             <label for="text">Product Category: </label>
                             <select id="ProductCategory" name="ProductCategory" class="form-control">
                                 <option value="Category1">Category 1</option>
                                 <option value="Category2">Category 2</option>
                                 <option value="Category3">Category 3</option>
+                                <?php if (isset($_POST['ProductCategory'])) echo $_POST['ProductCategory'];
+                                ?>
                             </select>
-                            <?php
-                            if(!isset($_POST['ProductCategory']))
-                            {
-                                $errorMessage = "<li>You forgot to select your Product Category!</li>";
-                            }
-                            ?>
+
                         </div>
                     </div>
                     <hr>
@@ -133,7 +138,7 @@
                             <label for="ItemDescription">Item Description: </label>
                         </div>
                         
-                            <textarea class="form-control rounded-0" name="ItemDescription" id="ItemDescription" rows="4"></textarea>
+                            <textarea class="form-control rounded-0" name="ItemDescription" id="ItemDescription" rows="4" value="<?php if(isset($_POST['ItemDescription'])) echo $_POST['ItemDescription']; ?>"> </textarea>
                         
                     </div>
                     <button type="submit" name="submit" value="submit" class="btn btn-primary btn-lg btn-block">Submit</button>

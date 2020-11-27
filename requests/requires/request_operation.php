@@ -2,14 +2,14 @@
 
 
 require_once("request_component.php");
-require("../includes/db.inc.php");
+require_once("../includes/db.inc.php");
 
 
 // create button click
-if (isset($_POST['create'])) {
-//    echo "<script>console.log('point')</script>";
-    createData();
-}
+//if (isset($_POST['create'])) {
+////    echo "<script>console.log('point')</script>";
+//    createData();
+//}
 
 if (isset($_POST['update'])) {
     UpdateData();
@@ -19,10 +19,10 @@ if (isset($_POST['delete'])) {
     deleteRecord();
 }
 
-if (isset($_POST['deleteall'])) {
-    deleteAll();
-
-}
+//if (isset($_POST['deleteall'])) {
+//    deleteAll();
+//
+//}
 
 function createData()
 {
@@ -89,30 +89,25 @@ function getData()
 // update dat
 function UpdateData()
 {
-    $itemid = textboxValue("item_id");
-    $itemname = textboxValue("item_name");
-    $itemdescription = textboxValue("item_description");
-    $itemprice = textboxValue("item_price");
-    $itemamount = textboxValue("item_amount");
-    $itemSku = textboxValue('item_sku');
-    $pictureURL = textboxValue("pictureUrl");
-    $datenow = time();
-    $status =  textboxValue("item_status");
+    $requestID = trim($_POST['RequestsID']);
+    $Status = "Fullfiled";
+    $date=date("Y-m-d H:i:s");
 
-    if ($itemname && $itemdescription && $itemprice && $itemamount && $pictureURL && $itemSku) {
+//    if ($itemname && $itemdescription && $itemprice && $itemamount && $pictureURL && $itemSku) {
         $sql = "
-                    UPDATE products SET Name='$itemname', ProductDesc = '$itemdescription',Price= '$itemprice',SKU='$itemSku',StockAMount='$itemamount',PictureURI = '$pictureURL' WHERE ProductId='$itemid';                    
+                    UPDATE requests SET Status = '$Status',DateFullFiled = '$date'WHERE RequestID='$requestID';                    
         ";
 
         if (mysqli_query($GLOBALS['conn'], $sql)) {
-            TextNode("success", "Data Successfully Updated");
+            TextNode("success", "Requests Successfully Fullfilled");
         } else {
-            TextNode("error", "Enable to Update Data");
+            TextNode("error", "Unable to Update Requests");
+            echo mysqli_error($GLOBALS['conn']);
         }
 
-    } else {
-        TextNode("error", "Select Data Using Edit Icon");
-    }
+//    } else {
+//        TextNode("error", "Select Data Using Edit Icon");
+//    }
 
 
 }
@@ -120,14 +115,17 @@ function UpdateData()
 
 function deleteRecord()
 {
-    $itemid = (int)textboxValue("item_id");
+    $requestID = trim($_POST['RequestsID']);
 
-    $sql = "DELETE FROM products WHERE ProductId=$itemid";
+    $sql = "DELETE FROM requests WHERE RequestID=$requestID";
 
     if (mysqli_query($GLOBALS['conn'], $sql)) {
         TextNode("success", "Record Deleted Successfully...!");
     } else {
-        TextNode("error", "Enable to Delete Record...!");
+        TextNode("error", "Unable to Delete Record...!");
+//
+//        echo "<script type='text/javascript'>alert('$requestID');</script>";
+//        echo '<p>' . mysqli_error($GLOBALS['conn']) . '<br><br>Query:' . $sql . '</p>';
     }
 
 }

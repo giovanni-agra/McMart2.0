@@ -1,3 +1,26 @@
+<?php
+//
+require_once("../includes/db.inc.php");
+require ("requires/request_operation.php");
+//if(isset($_POST['delete'])){
+//    global $a ;
+//    $a = isset($_POST['RequestsID']) ;
+//    $sql = "DELETE FROM requests WHERE RequestID='$a'";
+//    if(mysqli_query($conn,$sql)){
+//        $message = "Requests With ID: $a  Deleted";
+//        echo "<script type='text/javascript'>alert('$message');</script>";
+//        echo "<script type='text/javascript'> document.location = 'request_list.php'; </script>";
+//        exit();
+//    }else{
+//        $message = "Requests Failed to be Deleted.Please Contact Administrator";
+//        echo "<script type='text/javascript'>alert('$message');</script>";
+////        echo '<p>' . mysqli_error($conn) . '<br><br>Query:' . $sql . '</p>';
+//        echo "<script type='text/javascript'> document.location = 'request_list.php'; </script>";
+//        mysqli_close($conn);
+//        exit();
+//    }
+//}
+//?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,28 +100,73 @@
 //        die("Connection failed: " . $conn->connect_error);
 //    }
 
-    require ("../includes/db.inc.php");
+
     $sql = "SELECT * FROM requests";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         echo '<table class="table table-bordered">    
                     <tr class="table-primary">
+                     <th scope="col">Request ID</th>
                     <th scope="col">User Request Name</th>
                     <th scope="col">User ID Number</th>
+                    <th scope="col">Date Requested</th>
                     <th scope="col">Item Name</th>
                     <th scope="col">Product Category</th>
                     <th scope="col">Request Quantity</th>
+                    <th scope="col">Product Request Description</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Date Fullfilled</th>
+                    <th scope="col">Done?</th>
+                    <th scope="col">Delete</th>
+                    
                     </tr>';
         while ($row = $result->fetch_assoc()) {
 
-            echo'<tr>
+//            echo'<form method="POST" action="">
+//                    <tr>
+//                    <input hidden type="text" name="RequestsID" value="'.$row['RequestID'].'" />
+//                    <td>' . $row['RequestID'] . '</td>
+//                    <td>' . $row['UserRequestName'] . '</td>
+//                    <td>' . $row['UserRequestIDNumber'] . '</td>
+//                    <td>' . $row['DateRequests'] . '</td>
+//                    <td>' . $row['ItemName'] . '</td>
+//                    <td>' . $row['ProductCategory'] . '</td>
+//                    <td>' . $row['RequestQuantity'] . '</td>
+//                    <td>' . $row['ProductRequestDesc'] . '</td>
+//                    <td>' . $row['DateFullFiled'] . '</td>
+//                    <td><button type="button" class="btn btn-info">Update</button></td>
+//                    <td><input type="submit" value="Delete" name="delete" class="btn btn-danger"/></td>
+//                    </tr>
+//                    </form> ';
+                        echo'<form method="POST" action="">
+                    <tr>
+                    <input hidden type="text" name="RequestsID" value="'.$row['RequestID'].'" />
+                    <td>' . $row['RequestID'] . '</td>
+                    <!-- <td><input type="text" name="UserRequestName" value="'.$row['UserRequestName'].'" /></td>-->
                     <td>' . $row['UserRequestName'] . '</td>
                     <td>' . $row['UserRequestIDNumber'] . '</td>
+                    <td>' . $row['DateRequests'] . '</td>
                     <td>' . $row['ItemName'] . '</td>
                     <td>' . $row['ProductCategory'] . '</td>
                     <td>' . $row['RequestQuantity'] . '</td>
-                    </tr>';}
+                    <td>' . $row['ProductRequestDesc'] . '</td>';
+                    if ($row['Status'] == "Not fullfilled"){
+                        echo '<td><span class="badge badge-warning">' . $row['Status'] . '</span></td>
+                        <td>' . $row['DateFullFiled'] . '</td>
+                        <td><input type="submit" value="Update" name="update" class="btn btn-success"/></td>
+                        <td><input type="submit" value="Delete" name="delete" class="btn btn-danger"/></td>
+                        </tr>
+                        </form> ';
+                    }else{
+                        echo '<td><span class="badge badge-success">' . $row['Status'] . '</span></td>
+                        <td>' . $row['DateFullFiled'] . '</td>
+                        <td><button hidden type="button" class="btn btn-info">Update</button></td>
+                        <td><input type="submit" value="Delete" name="delete" class="btn btn-danger"/></td>
+                        </tr>
+                        </form> ';
+                    }
+}
         echo '</table>';
     }
     else {
