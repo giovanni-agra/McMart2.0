@@ -39,15 +39,16 @@ DROP TABLE IF EXISTS McMart.Products;
 
 CREATE TABLE IF NOT EXISTS McMart.Products
 (
-    ProductId   INT          NOT NULL AUTO_INCREMENT,
-    DateAdded   DATETIME     NOT NULL ,
-    SKU         INT          NOT NULL ,
-    Name        VARCHAR(255) NOT NULL ,
-    Price       FLOAT        NOT NULL ,
-    Status      VARCHAR(255) NOT NULL ,
-    PictureURI  VARCHAR(255) NOT NULL ,
-    StockAmount VARCHAR(255) NOT NULL ,
-    ProductDesc VARCHAR(255) NOT NULL ,
+    ProductId       INT          NOT NULL AUTO_INCREMENT,
+    DateAdded       DATETIME     NOT NULL ,
+    SKU             INT          NOT NULL ,
+    Name            VARCHAR(255) NOT NULL ,
+    ProductCategory VARCHAR(255) NOT NULL ,
+    Price           FLOAT        NOT NULL ,
+    Status          VARCHAR(255) NOT NULL ,
+    PictureURI      VARCHAR(255) NOT NULL ,
+    StockAmount     VARCHAR(255) NOT NULL ,
+    ProductDesc     VARCHAR(255) NOT NULL ,
     PRIMARY KEY (ProductId)
 
 

@@ -1,3 +1,8 @@
+<?php
+
+require("../products/product_component.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,54 +39,45 @@
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container">
 
-            <?php include('includes/nav_bar.php'); ?>
+            <?php include('../includes/nav_bar.php'); ?>
 
         </div>
     </nav>
 </header>
 
-<?php
-// Include the database configuration file
-require '../includes/db.inc.php';
-
-function categoryTree($parent_id = 0, $CategoryName){
-    global $db;
-    // Need to make a new table for Category to separate types of product
-    $query = $db->query("SELECT * FROM Products WHERE parent_id = $parent_id ORDER BY name ASC");
-   
-    if($query->num_rows > 0){
-        while($row = $query->fetch_assoc()){
-            echo '<option value="'.$row['id'].'">'.'</option>';
-            categoryTree($row['id']);
-        }
-    }
-}
-?>
-
-<h1 class="text-center">PRODUCT'S CATEGORY</h1>
+<h1 class="text-center">Category 1 Products</h1>
 
     <div class="container mb-5 justify-content-center">
+
         <div class="form-row">
-            <div class="form-group col-md-4">
-                <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php $CategoryName ?></h5>
-                        <p class="card-text">Description of the Category</p>
-                        <a href="#" target="_blank" class="stretched-link btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+            <?php 
+                $servername = "127.0.0";
+                $username = "root";
+                $password = "wordpass123";
+                $dbname = "mcmart";
+            
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                $sql = "SELECT * FROM Products WHERE Products.ProductCategory = 'Category1'";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        component($row['PictureURI'],$row['Name'], $row['ProductStatus'], $row['ProductPrice']);
+                    }
+                }
+                else {
+                    echo "0 results";
+                }
+                $conn->close();
+            ?>
         </div>
+
     </div>
-
-
-
-<nav class="static-top">
-    <div class="container">
-        
-    </div>
-</nav>
 
 </body>
 
