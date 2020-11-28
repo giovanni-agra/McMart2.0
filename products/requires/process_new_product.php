@@ -4,12 +4,12 @@
 $errors = array();//this array will determine which error is happening
 
 
-$SKU = trim($_POST['SKU']);
+$SKU = trim($_POST['ProductSKU']);
 if (empty($SKU)) {
     $errors[] = "You forgot to enter your SKU";
 }
 
-$Name = trim($_POST['Name']);
+$Name = trim($_POST['ProductName']);
 if (empty($Name)) {
     $errors[] = "You forgot to enter your Product Name";
 }
@@ -19,37 +19,41 @@ if (empty($ProductCategory)) {
     $errors[] = "You forgot to enter your Product Category";
 
 }
-$Price = trim($_POST['Price']);
+$Price = trim($_POST['ProductPrice']);
 if (empty($Price)) {
     $errors[] = "You forgot to enter your Product Price";
 
 }
 
-$PictureURI = trim($_POST['PictureURI']);
+$PictureURI = trim($_POST['ProductPictureURI']);
 if (empty($PictureURI)) {
     $errors[] = "You forgot to enter your Product Picture URI";
 }
 
-$StockAmount = trim($_POST['StockAmount']);
+$StockAmount = trim($_POST['ProductStockAmount']);
 if (empty($StockAmount)) {
     $errors[] = "You forgot to enter your item Product Stock Amount";
 }
 
-$ProductDesc = trim($_POST['ProductDesc']);
+$ProductDesc = trim($_POST['ProductDescription']);
 if (empty($ProductDesc)) {
     $errors[] = "You forgot to enter your item Product Description";
 }
-$Status = "In-Stock";
+$Status = trim($_POST['ProductStatus']);
+if (empty($Status)) {
+    $errors[] = "You forgot to enter your item Product Status";
+}
+
 $date=date("Y-m-d H:i:s");
 //$status = "Not Fullfiled";
 if (empty($errors)) {
     try {
         require('../includes/db.inc.php'); //caling db.inc to connect to db
-        $query = "INSERT INTO products (SKU,Name,ProductCategory,Price,Status,PictureURI,DateRequests,StockAmount,ProductDesc )"; // querying sql function
+        $query = "INSERT INTO products (DateAdded,SKU,Name,ProductCategory,Price,Status,PictureURI,StockAmount,ProductDesc )"; // querying sql function
         $query .= "VALUES(?,?,?,?,?,?,?,?,?) ";
         $q = mysqli_stmt_init($conn);
         mysqli_stmt_prepare($q, $query);
-        mysqli_stmt_bind_param($q, "sssssssss", $SKU,$Name,$ProductCategory,$Price,$Status,$PictureURI,$DateRequests,$StockAmount, $ProductDesc);
+        mysqli_stmt_bind_param($q, "sssssssss", $date,$SKU,$Name,$ProductCategory,$Price,$Status,$PictureURI,$StockAmount, $ProductDesc);
         mysqli_stmt_execute($q);
         if (mysqli_stmt_affected_rows($q) == 1) {
             echo "<script type='text/javascript'> document.location = '../index.php'; </script>";

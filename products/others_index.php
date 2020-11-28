@@ -1,6 +1,6 @@
 <?php
-require("../products/requires/process_new_product.php");
-require("../products/requires/product_index_component.php");
+//require("../products/requires/process_new_product.php");
+//require("../products/requires/product_index_component.php");
 ?>
 
 <!DOCTYPE html>
@@ -51,17 +51,17 @@ require("../products/requires/product_index_component.php");
 
         <div class="form-row">
             <?php 
-                $servername = "127.0.0";
-                $username = "root";
-                $password = "wordpass123";
-                $dbname = "mcmart";
-            
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-
+//                $servername = "127.0.0";
+//                $username = "root";
+//                $password = "wordpass123";
+//                $dbname = "mcmart";
+//
+//                $conn = new mysqli($servername, $username, $password, $dbname);
+//                // Check connection
+//                if ($conn->connect_error) {
+//                    die("Connection failed: " . $conn->connect_error);
+//                }
+require ("../includes/db.inc.php");
                 $sql = "SELECT * FROM Products WHERE Products.ProductCategory = 'Others'";
                 $result = $conn->query($sql);
 

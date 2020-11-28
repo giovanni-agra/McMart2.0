@@ -1,6 +1,6 @@
 <?php
-require("../products/requires/process_new_product.php");
-require("../products/requires/product_index_component.php");
+//require("../products/requires/process_new_product.php");
+//require("../products/requires/product_index_component.php");
 ?>
 
 <!DOCTYPE html>

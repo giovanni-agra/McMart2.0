@@ -44,12 +44,22 @@
                 <?php if (isset($_SESSION['Loggedin']) ):  ?>
 
                     <?php  if ($_SESSION['Role'] == 'Worker') : ?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Requests</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/McMart2.0/requests/request_list.php">Requests List</a>
+                        <a class="dropdown-item" href="/McMart2.0/requests/new_request.php">Create Requests</a>
+
+                    </div>
                 <li class="nav-item">
-                    <a class="nav-link " href="/McMart2.0/requests/new_request.php">Create Request</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/McMart2.0/products/manageProducts.php">Manage</a>
+                        <a class="dropdown-item" href="/McMart2.0/products/new_products.php">Create</a>
+
+                    </div>
                 </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/McMart2.0/requests/request_list.php">Request Lists</a>
-                        </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search">
@@ -74,6 +84,14 @@
                                 <a class="dropdown-item" href="/McMart2.0/requests/new_request.php">Create Requests</a>
 
                             </div>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/McMart2.0/products/manageProducts.php">Manage</a>
+                                <a class="dropdown-item" href="/McMart2.0/products/new_products.php">Create</a>
+
+                            </div>
+                        </li>
                         <li class="nav-item">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a>
@@ -85,14 +103,11 @@
                         </li>
 
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search">
-                <button class="btn btn-outline-dark my-2 my-sm-0" name="submit" type="submit">Search</button>
-            </form>
+
 <!--            <a href="admin_login.php"><button class="btn btn-outline-dark ml-5 " name="Login" type="login">Login</button></a>-->
-                        <a href="/McMart2.0/accounts/Logout.php"><button class="btn btn-outline-danger ml-1 " name="Logout" type="logout">Logout</button></a>
+                        <a href="/McMart2.0/accounts/Logout.php"><button class="btn btn-outline-danger ml-5 " name="Logout" type="logout">Logout</button></a>
         </div>
-                        <p class="text-right pl-2 pt-2"><i>Welcome <?php echo$_SESSION['Name'] ?>!</i></p>
+                        <p class="text-right pl-2 mt-2"><i>Welcome <?php echo$_SESSION['Name'] ?>!</i></p>
     </nav>
 </div>
                 <?php endif;?>

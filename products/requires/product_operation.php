@@ -19,41 +19,6 @@ if (isset($_POST['delete'])) {
     deleteRecord();
 }
 
-//if (isset($_POST['deleteall'])) {
-//    deleteAll();
-//
-//}
-
-// function createData()
-// {
-
-// //    $itemid = textboxValue("item_id");
-//     $SKU = textboxValue("item_name");
-//     $Name = textboxValue("item_description");
-//     $ProductCategory = textboxValue("item_price");
-//     $Price = textboxValue("item_amount");
-//     $Status = textboxValue('item_sku');
-//     $PictureURI = textboxValue("pictureUrl");
-//     $datenow = time();
-//     $ProductDesc = textboxValue("item_status");
-//     $StockAmount =  textboxValue("item_status");
-
-//     if ($SKU && $Name && $ProductCategory && $itemamount && $itemSku && $pictureURL && $status) {
-
-//         $sql = "INSERT INTO products (Name, ProductDesc, Price, StockAmount,Status,PictureURI,SKU) 
-//                         VALUES ('$itemname','$itemdescription','$itemprice','$itemamount','$status','$pictureURL','$itemSku' )";
-
-//         if (mysqli_query($GLOBALS['conn'], $sql)) {
-//             TextNode("success", "Record Successfully Inserted...!");
-//         } else {
-//             echo "Error From Create Data";
-//         }
-
-//     } else {
-//         TextNode("error", "Provide Data in the Textbox");
-//     }
-// }
-
 function textboxValue($value)
 {
 
@@ -90,19 +55,27 @@ function getData()
 // update dat
 function UpdateData()
 {
-    $requestID = trim($_POST['RequestsID']);
-    $Status = "Fullfiled";
-    $date=date("Y-m-d H:i:s");
+    $ProductId = trim($_POST['ProductId']);
+    $Name = trim($_POST['Name']);
+    $SKU = trim($_POST['SKU']);
+    $ProductCategory = trim($_POST['ProductCategory']);
+    $Price = trim($_POST['Price']);
+    $PictureURI = trim($_POST['PictureURI']);
+    $StockAmount = trim($_POST['StockAmount']);
+    $ProductDesc = trim($_POST['ProductDesc']);
+
+    $Status = trim($_POST['Status']);
+//    $date=date("Y-m-d H:i:s");
 
 //    if ($itemname && $itemdescription && $itemprice && $itemamount && $pictureURL && $itemSku) {
         $sql = "
-                    UPDATE requests SET Status = '$Status',DateFullFiled = '$date'WHERE RequestID='$requestID';                    
+                    UPDATE products SET Name='$Name',SKU='$SKU',ProductCategory='$ProductCategory',Price='$Price',Status='$Status',PictureURI='$PictureURI',StockAmount='$StockAmount',ProductDesc='$ProductDesc' WHERE ProductId='$ProductId';                    
         ";
 
         if (mysqli_query($GLOBALS['conn'], $sql)) {
-            TextNode("success", "Requests Successfully Fullfilled");
+            TextNode("success", "Product Successfully Updated");
         } else {
-            TextNode("error", "Unable to Update Requests");
+            TextNode("error", "Unable to Update Product");
             echo mysqli_error($GLOBALS['conn']);
         }
 
@@ -116,14 +89,14 @@ function UpdateData()
 
 function deleteRecord()
 {
-    $requestID = trim($_POST['RequestsID']);
+    $ProductId = trim($_POST['ProductId']);
 
-    $sql = "DELETE FROM requests WHERE RequestID=$requestID";
+    $sql = "DELETE FROM products WHERE ProductId = $ProductId";
 
     if (mysqli_query($GLOBALS['conn'], $sql)) {
-        TextNode("success", "Record Deleted Successfully...!");
+        TextNode("success", "Product Deleted Successfully...!");
     } else {
-        TextNode("error", "Unable to Delete Record...!");
+        TextNode("error", "Unable to Delete Product...!");
 //
 //        echo "<script type='text/javascript'>alert('$requestID');</script>";
 //        echo '<p>' . mysqli_error($GLOBALS['conn']) . '<br><br>Query:' . $sql . '</p>';
