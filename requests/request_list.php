@@ -182,7 +182,7 @@ require ("requires/request_operation.php");
 <!-- Footer -->
 <nav class="static-top">
     <div class="container">
-        <?php include('includes/footer-finalProject.php'); ?>
+        <?php include('includes/footer.php'); ?>
     </div>
 </nav>
 <!-- Bootstrap core JavaScript -->

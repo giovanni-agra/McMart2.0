@@ -22,13 +22,16 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product Category</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/McMart2.0/products/food_index.php">Category1</a>
-                        <a class="dropdown-item" href="contactList.php">Category2</a>
+                        <a class="dropdown-item" href="/McMart2.0/products/food_index.php">Food and Drinks</a>
+                        <a class="dropdown-item" href="/McMart2.0/products/books_index.php">Books</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="newAsset.php">Category3</a>
-                        <a class="dropdown-item" href="assetList.php">Category4</a>
+                        <a class="dropdown-item" href="/McMart2.0/products/medicine_index.php">Medicine</a>
+                        <a class="dropdown-item" href="/McMart2.0/products/stationary_index.php">Stationary</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/McMart2.0/products/uniform_index.php">Uniform</a>
+                        <a class="dropdown-item" href="/McMart2.0/products/others_index.php">Others</a>
                     </div>
                 </li>
                 </li>

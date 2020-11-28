@@ -154,7 +154,7 @@ require_once("../includes/db.inc.php");
 
         </div>
 
-        <nav class="static-bottom">
+        <nav class="static-top">
             <div class="container">
                 <?php include('../includes/footer.php'); ?>
             </div>

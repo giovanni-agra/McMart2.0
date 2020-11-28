@@ -24,35 +24,35 @@ if (isset($_POST['delete'])) {
 //
 //}
 
-function createData()
-{
+// function createData()
+// {
 
-//    $itemid = textboxValue("item_id");
-    $SKU = textboxValue("item_name");
-    $Name = textboxValue("item_description");
-    $ProductCategory = textboxValue("item_price");
-    $Price = textboxValue("item_amount");
-    $Status = textboxValue('item_sku');
-    $PictureURI = textboxValue("pictureUrl");
-    $datenow = time();
-    $ProductDesc = textboxValue("item_status");
-    $StockAmount =  textboxValue("item_status");
+// //    $itemid = textboxValue("item_id");
+//     $SKU = textboxValue("item_name");
+//     $Name = textboxValue("item_description");
+//     $ProductCategory = textboxValue("item_price");
+//     $Price = textboxValue("item_amount");
+//     $Status = textboxValue('item_sku');
+//     $PictureURI = textboxValue("pictureUrl");
+//     $datenow = time();
+//     $ProductDesc = textboxValue("item_status");
+//     $StockAmount =  textboxValue("item_status");
 
-    if ($itemname && $itemdescription && $itemprice && $itemamount && $itemSku && $pictureURL && $status) {
+//     if ($SKU && $Name && $ProductCategory && $itemamount && $itemSku && $pictureURL && $status) {
 
-        $sql = "INSERT INTO products (Name, ProductDesc, Price, StockAmount,Status,PictureURI,SKU) 
-                        VALUES ('$itemname','$itemdescription','$itemprice','$itemamount','$status','$pictureURL','$itemSku' )";
+//         $sql = "INSERT INTO products (Name, ProductDesc, Price, StockAmount,Status,PictureURI,SKU) 
+//                         VALUES ('$itemname','$itemdescription','$itemprice','$itemamount','$status','$pictureURL','$itemSku' )";
 
-        if (mysqli_query($GLOBALS['conn'], $sql)) {
-            TextNode("success", "Record Successfully Inserted...!");
-        } else {
-            echo "Error From Create Data";
-        }
+//         if (mysqli_query($GLOBALS['conn'], $sql)) {
+//             TextNode("success", "Record Successfully Inserted...!");
+//         } else {
+//             echo "Error From Create Data";
+//         }
 
-    } else {
-        TextNode("error", "Provide Data in the Textbox");
-    }
-}
+//     } else {
+//         TextNode("error", "Provide Data in the Textbox");
+//     }
+// }
 
 function textboxValue($value)
 {

@@ -45,7 +45,7 @@ require("../products/requires/product_index_component.php");
     </nav>
 </header>
 
-<h1 class="text-center">All Food and Drinks Products</h1>
+<h1 class="text-center">All Others Products</h1>
 
     <div class="container mb-5 justify-content-center">
 
@@ -62,7 +62,7 @@ require("../products/requires/product_index_component.php");
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql = "SELECT * FROM Products WHERE Products.ProductCategory = 'Food'";
+                $sql = "SELECT * FROM Products WHERE Products.ProductCategory = 'Others'";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {

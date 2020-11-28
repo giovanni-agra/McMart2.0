@@ -64,9 +64,9 @@ require ('includes/db.inc.php');
         <div class="form-row">
             <div class="form-group col-md-4 text-center">
                 <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/images/fastfood.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Food</h5>
+                        <h5 class="card-title">Food and Drinks</h5>
                         <hr>
                         <p class="card-text">No need to go outside.</p>
                         <a href="products/food_index.php" target="_blank" class="stretched-link btn btn-primary">See Products</a>
@@ -137,7 +137,16 @@ require ('includes/db.inc.php');
 
 <nav class="static-top">
     <div class="container">
-        
+    <footer class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="apiu.edu">www.apiu.edu</a>
+            <img src="assets/images/mcmart2.0logo.png" class="img-fluid" alt="Responsive image" width="500" height="600">
+        </div>
+        <!-- Copyright -->
+
+    </footer>
     </div>
 </nav>
 

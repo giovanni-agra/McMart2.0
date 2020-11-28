@@ -61,17 +61,25 @@ if (empty($errors)) {
 
 
     } catch (Exception $e) {
-        print "The system is buys please try later";
+        print '<div class=/"alert alert-danger/" role=/"alert/">
+        The System is busy, please try again later.
+        </div>';
     } catch (Error $e) {
-        print "The system is busy";
+        print '<div class=/"alert alert-danger/" role=/"alert/">
+        The System is busy.
+        </div>';
     }
 
 
 } else {
-    $errorstring = "Error! <br> The following errors occurred:<br>";
+    $errorstring = '<div class=/"alert alert-danger/" role=/"alert/">
+    Error! <br> The following errors occurred:<br>.
+    </div>';
     foreach ($errors as $msg) {
         $errorstring .= "-$msg <br>\n";
     }
-    $errorstring .= "please try again.<br>";
+    $errorstring .= '<div class=/"alert alert-danger/" role=/"alert/">
+    Please try again later.
+    </div>';
     echo "<p class='text-center col-sm-2 mx-auto' style='color:red'>$errorstring</p>";
 }
