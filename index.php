@@ -64,7 +64,7 @@ require ('includes/db.inc.php');
         <div class="form-row">
             <div class="form-group col-md-4 text-center">
                 <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/fastfood.png" alt="Card image cap">
+                    <img class="card-img-top" src="assets/images/foods.png" alt="Card image cap" class="img-thumbnail">
                     <div class="card-body">
                         <h5 class="card-title">Food and Drinks</h5>
                         <hr>
@@ -75,7 +75,7 @@ require ('includes/db.inc.php');
             </div>
             <div class="form-group col-md-4 text-center">
                 <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/images/books.png" alt="Card image cap" class="img-thumbnail">
                     <div class="card-body">
                         <h5 class="card-title">Books</h5>
                         <hr>
@@ -86,7 +86,7 @@ require ('includes/db.inc.php');
             </div>
             <div class="form-group col-md-4 text-center">
                 <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/images/medicine.png" alt="Card image cap" class="img-thumbnail">
                     <div class="card-body">
                         <h5 class="card-title">Medicine</h5>
                         <hr>
@@ -99,7 +99,7 @@ require ('includes/db.inc.php');
         <div class="form-row">
             <div class="form-group col-md-4 text-center">
                 <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/images/stationary.png" alt="Card image cap" class="img-thumbnail">
                     <div class="card-body">
                         <h5 class="card-title">Stationary</h5>
                         <hr>
@@ -110,7 +110,7 @@ require ('includes/db.inc.php');
             </div>
             <div class="form-group col-md-4 text-center">
                 <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/images/uniform.png" alt="Card image cap" class="img-thumbnail">
                     <div class="card-body">
                         <h5 class="card-title">Uniform</h5>
                         <hr>
@@ -121,7 +121,7 @@ require ('includes/db.inc.php');
             </div>
             <div class="form-group col-md-4 text-center">
                 <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/images/others.png" alt="Card image cap" class="img-thumbnail">
                     <div class="card-body">
                         <h5 class="card-title">Find other products</h5>
                         <hr>
