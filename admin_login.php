@@ -113,11 +113,7 @@ if ($_POST) {
                     </form>
             </div>      
             <div class="login-form">
-                    <div class="alert alert-danger" role="alert">
-                        <h4 class="alert-heading">Warning!</h4><hr>
-                        <p>If you are not an Admin,<br>Return to the Home Page</p>
-                    </div>
-                    <a href="index.php" class="btn btn-primary btn-block" role="button" aria-pressed="true">Home Page</a>
+                    <a href="category_index.php" class="btn btn-primary btn-block" role="button" aria-pressed="true">HOME</a>
             </div>      
     </div>
 </body>

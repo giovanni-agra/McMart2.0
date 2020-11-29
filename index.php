@@ -26,21 +26,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    <style>
+        
+</style>
+
+
+
 </head>
 
 <body>
 
-<header>
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
 
-            <?php include('includes/nav_bar.php'); ?>
-
-        </div>
-
-    </nav>
-
-</header>
 
 
 <?php
@@ -56,80 +52,23 @@ require ('includes/db.inc.php');
 
 ?>
 
-<h1 class="text-center">PRODUCT'S CATEGORY</h1>
 
 
-
+    <br>
+    <br>
+    <br>
     <div class="container mb-5 justify-content-center">
-        <div class="form-row">
-            <div class="form-group col-md-4 text-center">
-                <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/foods.png" alt="Card image cap" class="img-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Food and Drinks</h5>
-                        <hr>
-                        <p class="card-text">No need to go outside.</p>
-                        <a href="products/food_index.php" target="_blank" class="stretched-link btn btn-primary">See Products</a>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group col-md-4 text-center">
-                <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/books.png" alt="Card image cap" class="img-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Books</h5>
-                        <hr>
-                        <p class="card-text">Find your Course's books in here.</p>
-                        <a href="#" target="_blank" class="stretched-link btn btn-primary">See Products</a>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group col-md-4 text-center">
-                <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/medicine.png" alt="Card image cap" class="img-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Medicine</h5>
-                        <hr>
-                        <p class="card-text">All light medicines.</p>
-                        <a href="#" target="_blank" class="stretched-link btn btn-primary">See Products</a>
-                    </div>
-                </div>
-            </div>
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Welcome to McMart Online!</h1>
+            <hr>
+            <h3>Visit as a Student</h3>
+            <p class="lead">Click here to see all types of products provided in the McMart!</p>
+            <a href="category_index.php" class="btn btn-primary">Continue</a>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-4 text-center">
-                <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/stationary.png" alt="Card image cap" class="img-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Stationary</h5>
-                        <hr>
-                        <p class="card-text">Find any types of drawing and writing items in here.</p>
-                        <a href="#" target="_blank" class="stretched-link btn btn-primary">See Products</a>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group col-md-4 text-center">
-                <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/uniform.png" alt="Card image cap" class="img-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Uniform</h5>
-                        <hr>
-                        <p class="card-text">Upper uniform, Lower uniform, belt, pin, etc.</p>
-                        <a href="#" target="_blank" class="stretched-link btn btn-primary">See Products</a>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group col-md-4 text-center">
-                <div class="card btn-no-waves" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/images/others.png" alt="Card image cap" class="img-thumbnail">
-                    <div class="card-body">
-                        <h5 class="card-title">Find other products</h5>
-                        <hr>
-                        <p class="card-text">You can see other products in here.</p>
-                        <a href="#" target="_blank" class="stretched-link btn btn-primary">See Products</a>
-                    </div>
-                </div>
-            </div>
+    
+        <br>
+        <div class="alert alert-secondary text-center" role="alert">
+            For Admin and Workers, <a href="admin_login.php" class="alert-link">CLICK HERE</a>  to Sign In.
         </div>
     </div>
 
@@ -140,6 +79,7 @@ require ('includes/db.inc.php');
     <footer class="page-footer font-small blue">
 
         <!-- Copyright -->
+        <hr>
         <div class="footer-copyright text-center py-3">© 2020 Copyright:
             <a href="apiu.edu">www.apiu.edu</a>
             <img src="assets/images/mcmart2.0logo.png" class="img-fluid" alt="Responsive image" width="500" height="600">

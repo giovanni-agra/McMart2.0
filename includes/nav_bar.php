@@ -14,7 +14,7 @@
 <div class="container">
 
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/McMart2.0/index.php">McMart 2.0</a>
+        <a class="navbar-brand" href="/McMart2.0/category_index.php">McMart 2.0</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product Category</a>
+                    <a class="nav-link dropdown-toggle" href="category_index.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product Category</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/McMart2.0/products/food_index.php">Food and Drinks</a>
                         <a class="dropdown-item" href="/McMart2.0/products/books_index.php">Books</a>
@@ -121,7 +121,7 @@
                             <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search">
                             <button class="btn btn-outline-dark my-2 my-sm-0" name="submit" type="submit">Search</button>
                         </form>
-                        <a href="/McMart2.0/admin_login.php"><button class="btn btn-outline-primary ml-1 " name="Login" type="login">Login</button></a>
+                        <a href="/McMart2.0/admin_login.php"><button class="btn btn-outline-primary ml-1 " name="Login" type="login">WORKERS</button></a>
             <!--            <a href="accounts/Logout.php"><button class="btn btn-outline-danger ml-1 " name="Logout" type="logout">Logout</button></a>-->
                     </div>
                 </nav>
