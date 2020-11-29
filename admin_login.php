@@ -32,14 +32,14 @@ if ($_POST) {
                 $_SESSION['Role'] = 'Worker';
                 $_SESSION['Name'] = $name;
                 $_SESSION['Loggedin'] = True;
-                header('location:index.php');
+                header('location:category_index.php');
             }
             if ($role ==  'Admin'){
                 session_start();
                 $_SESSION['Role'] = 'Admin';
                 $_SESSION['Name'] = $name;
                 $_SESSION['Loggedin'] = True;
-                header('location:index.php');
+                header('location:category_index.php');
             }
         }else{
 

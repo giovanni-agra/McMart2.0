@@ -45,30 +45,30 @@ require("../products/requires/product_index_component.php");
     </nav>
 </header>
 
-<h1 class="text-center">All Food and Drinks Products</h1>
+<h1 class="text-center">All Food Products</h1>
 
-    
+<div class="container mb-5 justify-content-center">
 
-    <div class="container mb-5 justify-content-center">
-        <div class="form-row">
-            <?php
-                require('../products/requires/product_class.php');
-                $objProduct = new product();
-                $products = $objProduct->getAllProducts();
-                foreach ($products as $key => $product) {
-            ?>
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                    <img src="<?= $product['PictureURI']; ?>" alt="" style="width: 200px; height: 200px;">
-                        <div class="caption">
-                            <h3><?= $product['Name']; ?></h3>
-                            <p><?= substr($product  ['ProductDesc'], 0, 60) . '...'; ?></p>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
-        </div>
+    <div class="form-row">
+        <?php
+        require ("../includes/db.inc.php");
+        $sql = "SELECT * FROM Products WHERE Products.ProductCategory = 'Food'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                component($row['PictureURI'],$row['Name'], $row['Status'], $row['Price'],$row['ProductDesc']);
+            }
+        }
+        else {
+            echo "0 results";
+        }
+        //                echo $result->num_rows
+        $conn->close();
+        ?>
     </div>
+
+</div>
 
 </body>
 

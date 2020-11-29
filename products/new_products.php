@@ -140,7 +140,7 @@
                         <label for="text">Product Status: </label>
                         <select id="ProductStatus" name="ProductStatus" class="form-control">
                             <option value="In Stock">In Stock</option>
-                            <option value="Out of Stock">Out of Stock</option>
+                            <option value="Out Of Stock">Out of Stock</option>
 
 
                             <?php if (isset($_POST['ProductStatus'])) echo $_POST['ProductStatus'];

@@ -1,6 +1,6 @@
 <?php
 //require("../products/requires/process_new_product.php");
-//require("../products/requires/product_index_component.php");
+require("../products/requires/product_index_component.php");
 ?>
 
 <!DOCTYPE html>
@@ -47,37 +47,28 @@
 
 <h1 class="text-center">All Uniform Products</h1>
 
-    <div class="container mb-5 justify-content-center">
+<div class="container mb-5 justify-content-center">
 
-        <div class="form-row">
-            <?php 
-                $servername = "127.0.0";
-                $username = "root";
-                $password = "wordpass123";
-                $dbname = "mcmart";
-            
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
+    <div class="form-row">
+        <?php
+        require ("../includes/db.inc.php");
+        $sql = "SELECT * FROM Products WHERE Products.ProductCategory = 'Uniform'";
+        $result = $conn->query($sql);
 
-                $sql = "SELECT * FROM Products WHERE Products.ProductCategory = 'Uniform'";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        component($row['PictureURI'],$row['Name'], $row['ProductStatus'], $row['ProductPrice']);
-                    }
-                }
-                else {
-                    echo "0 results";
-                }
-                $conn->close();
-            ?>
-        </div>
-
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                component($row['PictureURI'],$row['Name'], $row['Status'], $row['Price'],$row['ProductDesc']);
+            }
+        }
+        else {
+            echo "0 results";
+        }
+        //                echo $result->num_rows
+        $conn->close();
+        ?>
     </div>
+
+</div>
 
 </body>
 

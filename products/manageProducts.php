@@ -140,7 +140,7 @@ require ("requires/product_operation.php");
                    <td><input class="demo-input-box" type="number" name="Price" value="' . $row['Price'] . '" /></td>
                    <td><select class="form-control" name="Status" id="Status" >
                                   <option value="In Stock"'; if($row['Status'] == 'In Stock'){ echo "selected";}  echo'>In Stock</option>
-                              <option value="Out of Stock"'; if($row['Status'] == 'Out of Stock'){ echo "selected";}  echo'>Out of Stock</option>
+                              <option value="Out of Stock"'; if($row['Status'] == 'Out Of Stock'){ echo "selected";}  echo'>Out of Stock</option>
 
 
 
