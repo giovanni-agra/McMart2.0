@@ -163,10 +163,10 @@ require ("account_operation.php");
 
 
 <!-- Footer -->
-<nav class="static-top">
-    <div class="container">
-        <?php include('includes/footer-finalProject.php'); ?>
-    </div>
+<nav class="static-bottom">
+            <div class="container">
+                <?php include('../includes/footer.php'); ?>
+            </div>
 </nav>
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

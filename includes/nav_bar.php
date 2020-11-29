@@ -48,7 +48,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Requests</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/McMart2.0/requests/request_list.php">Requests List</a>
-                        <a class="dropdown-item" href="/McMart2.0/requests/new_request.php">Create Requests</a>
+                        <a class="dropdown-item" href="/McMart2.0/requests/new_request.php">Requests New Product</a>
 
                     </div>
                 <li class="nav-item">
@@ -81,7 +81,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Requests</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/McMart2.0/requests/request_list.php">Requests List</a>
-                                <a class="dropdown-item" href="/McMart2.0/requests/new_request.php">Create Requests</a>
+                                <a class="dropdown-item" href="/McMart2.0/requests/new_request.php">Requests New Product</a>
 
                             </div>
                         <li class="nav-item dropdown">
@@ -113,7 +113,7 @@
                 <?php endif;?>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link " href="/McMart2.0/requests/new_request.php">Create Request</a>
+                        <a class="nav-link " href="/McMart2.0/requests/new_request.php">Request New Product</a>
                     </li>
 
                         </ul>

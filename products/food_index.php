@@ -1,6 +1,6 @@
 <?php
 //require("../products/requires/process_new_product.php");
-//require("../products/requires/product_index_component.php");
+require("../products/requires/product_index_component.php");
 ?>
 
 <!DOCTYPE html>
@@ -47,36 +47,27 @@
 
 <h1 class="text-center">All Food and Drinks Products</h1>
 
+    
+
     <div class="container mb-5 justify-content-center">
-
         <div class="form-row">
-            <?php 
-                $servername = "127.0.0";
-                $username = "root";
-                $password = "wordpass123";
-                $dbname = "mcmart";
-            
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-
-                $sql = "SELECT * FROM Products WHERE Products.ProductCategory = 'Food'";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        component($row['PictureURI'],$row['Name'], $row['ProductStatus'], $row['ProductPrice']);
-                    }
-                }
-                else {
-                    echo "0 results";
-                }
-                $conn->close();
+            <?php
+                require('../products/requires/product_class.php');
+                $objProduct = new product();
+                $products = $objProduct->getAllProducts();
+                foreach ($products as $key => $product) {
             ?>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                    <img src="<?= $product['PictureURI']; ?>" alt="" style="width: 200px; height: 200px;">
+                        <div class="caption">
+                            <h3><?= $product['Name']; ?></h3>
+                            <p><?= substr($product  ['ProductDesc'], 0, 60) . '...'; ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
-
     </div>
 
 </body>
