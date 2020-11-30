@@ -128,9 +128,12 @@ require_once("../includes/db.inc.php");
                         <div class="form-group col-md-4">
                             <label for="text">Product Category: </label>
                             <select id="ProductCategory" name="ProductCategory" class="form-control">
-                                <option value="Category1">Category 1</option>
-                                <option value="Category2">Category 2</option>
-                                <option value="Category3">Category 3</option>
+                                <option value="Books">Books</option>
+                                <option value="Food">Food</option>
+                                <option value="Medicine">Medicine</option>
+                                <option value="Stationary">Stationary</option>
+                                <option value="Uniform">Uniform</option>
+                                <option value="Others">Others</option>
                                 <?php if (isset($_POST['ProductCategory'])) echo $_POST['ProductCategory'];
                                 ?>
                             </select>

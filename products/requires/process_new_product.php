@@ -56,7 +56,7 @@ if (empty($errors)) {
         mysqli_stmt_bind_param($q, "sssssssss", $date,$SKU,$Name,$ProductCategory,$Price,$Status,$PictureURI,$StockAmount, $ProductDesc);
         mysqli_stmt_execute($q);
         if (mysqli_stmt_affected_rows($q) == 1) {
-            echo "<script type='text/javascript'> document.location = '../index.php'; </script>";
+            echo "<script type='text/javascript'> document.location = '/McMart2.0/products/new_products.php'; </script>";
             exit();
         } else {
             $errorstring = "<p class ='text-center col-sm-8 mx-auto' style='color:red'>";
