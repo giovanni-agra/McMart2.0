@@ -61,7 +61,7 @@ require ('includes/db.inc.php');
         <div class="jumbotron text-center">
             <h1 class="display-4">Welcome to McMart Online!</h1>
             <hr>
-            <h3>Visit as a Student</h3>
+            <h3>Come! Visit our Store.</h3>
             <p class="lead">Click here to see all types of products provided in the McMart!</p>
             <a href="category_index.php" class="btn btn-primary">Continue</a>
         </div>
